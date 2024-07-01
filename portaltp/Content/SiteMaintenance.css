@@ -1,0 +1,22 @@
+/* карусель */
+.item-responsive {
+  position: relative; /* относительное позиционирование */
+}
+.item-responsive:before {
+  display: block; /* отображать элемент как блок */
+  content: ""; /* содержимое псевдоэлемента */
+  width: 100%; /* ширина элемента */    
+}
+.item-16by9 {
+  padding-top: 56.25%; /* (9:16)*100% */
+}
+.item-responsive>.content {
+  position: absolute; /* абсолютное положение элемент */
+  /* положение элемента */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: contain !important;
+}
+/*-------------------------*/

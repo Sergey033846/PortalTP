@@ -1,0 +1,2581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище perscabnewModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl1C_CenovayaKategoriya">
+          <Key>
+            <PropertyRef Name="_IDRref" />
+          </Key>
+          <Property Name="_IDRref" Type="binary" MaxLength="16" Nullable="false" />
+          <Property Name="_EnumOrder" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl1C_EnumUrovenU">
+          <Key>
+            <PropertyRef Name="_IDRref" />
+          </Key>
+          <Property Name="_IDRref" Type="binary" MaxLength="16" Nullable="false" />
+          <Property Name="_EnumOrder" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl1C_StatusOplaty">
+          <Key>
+            <PropertyRef Name="_IDRref" />
+          </Key>
+          <Property Name="_IDRref" Type="binary" MaxLength="16" Nullable="false" />
+          <Property Name="_EnumOrder" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl1C_VidRassrochki">
+          <Key>
+            <PropertyRef Name="_IDRref" />
+          </Key>
+          <Property Name="_IDRref" Type="binary" MaxLength="16" Nullable="false" />
+          <Property Name="_EnumOrder" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl1C_VidZayavki">
+          <Key>
+            <PropertyRef Name="_IDRref" />
+          </Key>
+          <Property Name="_IDRref" Type="binary" MaxLength="16" Nullable="false" />
+          <Property Name="_EnumOrder" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblContract">
+          <Key>
+            <PropertyRef Name="id_contract" />
+          </Key>
+          <Property Name="id_contract" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_zayavka" Type="uniqueidentifier" />
+          <Property Name="contract_number_1c" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="contract_date_1c" Type="datetime" />
+          <Property Name="id_contractstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="tblContractDoc">
+          <Key>
+            <PropertyRef Name="id_contractdoc" />
+          </Key>
+          <Property Name="id_contractdoc" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_contract" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="date_doc_add" Type="datetime" Nullable="false" />
+          <Property Name="doc_file_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="doc_file_path" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_doctype" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblContractStatus">
+          <Key>
+            <PropertyRef Name="id_contractstatus" />
+          </Key>
+          <Property Name="id_contractstatus" Type="int" Nullable="false" />
+          <Property Name="caption_contractstatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_contractstatus_1c" Type="binary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="tblDocType">
+          <Key>
+            <PropertyRef Name="id_doctype" />
+          </Key>
+          <Property Name="id_doctype" Type="int" Nullable="false" />
+          <Property Name="caption_doctype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblESignDoc">
+          <Key>
+            <PropertyRef Name="id_esign" />
+          </Key>
+          <Property Name="id_esign" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_zayavkadoc" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="verify_status" Type="bit" />
+          <Property Name="verify_user" Type="uniqueidentifier" />
+          <Property Name="verify_datetime" Type="datetime" />
+          <Property Name="esign_docid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="esign_user" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="esign_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblFIASRegionCity">
+          <Key>
+            <PropertyRef Name="id_FIASRegionCity" />
+          </Key>
+          <Property Name="id_FIASRegionCity" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_FIASRegionCity" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id_filial" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFilial">
+          <Key>
+            <PropertyRef Name="id_filial" />
+          </Key>
+          <Property Name="id_filial" Type="int" Nullable="false" />
+          <Property Name="caption_filial" Type="varchar" MaxLength="200" />
+          <Property Name="caption_filial_short" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblGP">
+          <Key>
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_GP" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGP_DogovorEnergo">
+          <Key>
+            <PropertyRef Name="id_dogovorenergo" />
+          </Key>
+          <Property Name="id_dogovorenergo" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_zayavka" Type="uniqueidentifier" />
+          <Property Name="id_gp_predstavitel" Type="uniqueidentifier" />
+          <Property Name="id_gp_filial" Type="uniqueidentifier" />
+          <Property Name="id_gp" Type="uniqueidentifier" />
+          <Property Name="id_prichinade" Type="uniqueidentifier" />
+          <Property Name="nomer_ls" Type="varchar" MaxLength="100" />
+          <Property Name="nomer_dogovorenergo" Type="varchar" MaxLength="100" />
+          <Property Name="nomer_elektroustanovka" Type="varchar" MaxLength="100" />
+          <Property Name="date_create_de" Type="datetime" />
+          <Property Name="date_podpis_de" Type="datetime" />
+          <Property Name="id_cenovayakategoriya" Type="binary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="tblGP_Filial">
+          <Key>
+            <PropertyRef Name="id_gp_filial" />
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp_filial" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_gp" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_GP_filial" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblGP_Predstavitel">
+          <Key>
+            <PropertyRef Name="id_gp_predstavitel" />
+            <PropertyRef Name="id_gp_filial" />
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp_predstavitel" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name_predstavitel" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id_gp_filial" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_gp" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_user" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblGP_PrichinaDE">
+          <Key>
+            <PropertyRef Name="id_prichinade" />
+          </Key>
+          <Property Name="id_prichinade" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_prichinade" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tblLog">
+          <Key>
+            <PropertyRef Name="id_logrec" />
+            <PropertyRef Name="id_logeventtype" />
+          </Key>
+          <Property Name="id_zayavka" Type="uniqueidentifier" />
+          <Property Name="id_user" Type="uniqueidentifier" />
+          <Property Name="comment_log" Type="varchar" MaxLength="100" />
+          <Property Name="id_logrec" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="logrec_datetime" Type="datetime" Nullable="false" />
+          <Property Name="id_logeventtype" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblLogEventType">
+          <Key>
+            <PropertyRef Name="id_logeventtype" />
+          </Key>
+          <Property Name="id_logeventtype" Type="int" Nullable="false" />
+          <Property Name="caption_logeventtype" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblNotify">
+          <Key>
+            <PropertyRef Name="id_notify" />
+          </Key>
+          <Property Name="id_notify" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_notifytype" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="date_create_notify" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="recipient_id" Type="uniqueidentifier" />
+          <Property Name="notifystatus_id" Type="uniqueidentifier" />
+          <Property Name="notify_text" Type="nvarchar(max)" />
+          <Property Name="priority" Type="int" Nullable="false" />
+          <Property Name="date_send_notify" Type="datetime2" Precision="0" />
+          <Property Name="id_notifychannel" Type="uniqueidentifier" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="date_plan_notify" Type="datetime2" Precision="0" />
+          <Property Name="link_id" Type="uniqueidentifier" />
+          <Property Name="comment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblNotifyChannel">
+          <Key>
+            <PropertyRef Name="id_notifychannel" />
+          </Key>
+          <Property Name="id_notifychannel" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_notifychannel" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblNotifyStatus">
+          <Key>
+            <PropertyRef Name="id_notifystatus" />
+          </Key>
+          <Property Name="id_notifystatus" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_notifystatus" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblNotifyType">
+          <Key>
+            <PropertyRef Name="id_notifytype" />
+          </Key>
+          <Property Name="id_notifytype" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_notifytype" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOrderSource">
+          <Key>
+            <PropertyRef Name="id_ordersource" />
+          </Key>
+          <Property Name="id_ordersource" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_ordersource" Type="nvarchar" MaxLength="20" />
+          <Property Name="caption_ordersource_short" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblPrichinaPodachiZ">
+          <Key>
+            <PropertyRef Name="id_prichinapodachiz" />
+          </Key>
+          <Property Name="id_prichinapodachiz" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_short" Type="nvarchar" MaxLength="250" />
+          <Property Name="caption_long" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblUserInfo">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="date_create_user" Type="datetime" Nullable="false" />
+          <Property Name="id_user" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fl_familiya" Type="varchar" MaxLength="100" />
+          <Property Name="fl_name" Type="varchar" MaxLength="50" />
+          <Property Name="fl_otchestvo" Type="varchar" MaxLength="100" />
+          <Property Name="telefon" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="yl_fullname" Type="varchar" MaxLength="1000" />
+          <Property Name="yl_shortname" Type="varchar" MaxLength="200" />
+          <Property Name="inn" Type="varchar" MaxLength="20" />
+          <Property Name="contact_familiya" Type="varchar" MaxLength="100" />
+          <Property Name="contact_name" Type="varchar" MaxLength="50" />
+          <Property Name="contact_otchestvo" Type="varchar" MaxLength="100" />
+          <Property Name="confirm_code" Type="varchar" MaxLength="10" />
+          <Property Name="confirm_code_date_send" Type="datetime" />
+          <Property Name="comment" Type="varchar" MaxLength="100" />
+          <Property Name="id_usertype" Type="int" Nullable="false" />
+          <Property Name="id_userrole" Type="int" Nullable="false" />
+          <Property Name="password_text" Type="varchar" MaxLength="50" />
+          <Property Name="user_login" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="user_nameingrid" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="id_filial" Type="int" Nullable="false" />
+          <Property Name="id_registration_typeid" Type="uniqueidentifier" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsLockedOut" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblUserRegistrationType">
+          <Key>
+            <PropertyRef Name="id_registration_typeid" />
+          </Key>
+          <Property Name="id_registration_typeid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_registration_typeid" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUserRole">
+          <Key>
+            <PropertyRef Name="id_userrole" />
+          </Key>
+          <Property Name="id_userrole" Type="int" Nullable="false" />
+          <Property Name="caption_userrole" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUserType">
+          <Key>
+            <PropertyRef Name="id_usertype" />
+          </Key>
+          <Property Name="id_usertype" Type="int" Nullable="false" />
+          <Property Name="caption_usertype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblZayavka">
+          <Key>
+            <PropertyRef Name="id_zayavka" />
+          </Key>
+          <Property Name="id_user" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_zayavka" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_zayavkatype" Type="int" Nullable="false" />
+          <Property Name="comment" Type="varchar" MaxLength="500" />
+          <Property Name="date_create_zayavka" Type="datetime" Nullable="false" />
+          <Property Name="zayavka_number_1c" Type="varchar" MaxLength="30" />
+          <Property Name="zayavka_date_1c" Type="datetime" />
+          <Property Name="is_viewed" Type="bit" Nullable="false" />
+          <Property Name="viewed_operator" Type="uniqueidentifier" />
+          <Property Name="id_filial" Type="int" />
+          <Property Name="is_temp" Type="bit" />
+          <Property Name="id_zayavkastatus" Type="int" />
+          <Property Name="id1C_EnumUrovenU" Type="binary" MaxLength="16" />
+          <Property Name="id1C_VidZayavki" Type="binary" MaxLength="16" />
+          <Property Name="id1C_CenovayaKategoriya" Type="binary" MaxLength="16" />
+          <Property Name="id1C_StatusOplaty" Type="binary" MaxLength="16" />
+          <Property Name="id1C_VidRassrochki" Type="binary" MaxLength="16" />
+          <Property Name="v1C_adresEPU" Type="nvarchar(max)" />
+          <Property Name="v1C_maxMoschnostEPU" Type="numeric" Precision="10" Scale="3" />
+          <Property Name="id_gp" Type="uniqueidentifier" />
+          <Property Name="v1C_StatusZayavki" Type="binary" MaxLength="16" />
+          <Property Name="v1C_NomerDogovora" Type="nvarchar" MaxLength="50" />
+          <Property Name="v1C_DataDogovora" Type="datetime2" Precision="0" />
+          <Property Name="v1C_StatusDogovora" Type="binary" MaxLength="16" />
+          <Property Name="v1C_EPU" Type="nvarchar(max)" />
+          <Property Name="v1C_StatusOplaty" Type="binary" MaxLength="16" />
+          <Property Name="status_PrikreplenAktTP" Type="bit" />
+          <Property Name="status_PrikreplenAktDopuskaPU" Type="bit" />
+          <Property Name="id_prichinapodachiz" Type="uniqueidentifier" />
+          <Property Name="v1C_Zayavitel" Type="nvarchar" MaxLength="250" />
+          <Property Name="status_GP_RegNewZ" Type="bit" />
+          <Property Name="status_GP_RegNewDTP" Type="bit" />
+          <Property Name="status_ZAnnulirovana" Type="bit" />
+          <Property Name="is_vremennaya" Type="bit" />
+          <Property Name="id_ordersource" Type="uniqueidentifier" />
+          <Property Name="date_copy_from1c" Type="datetime" />
+          <Property Name="id_FIASRegionCity" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblZayavkaChat">
+          <Key>
+            <PropertyRef Name="id_chatrec" />
+          </Key>
+          <Property Name="id_zayavka" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_chatrec" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="caption_msg" Type="varchar(max)" />
+          <Property Name="id_user" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="chatrec_datetime" Type="datetime" Nullable="false" />
+          <Property Name="istemp" Type="bit" />
+          <Property Name="isread" Type="bit" />
+          <Property Name="isread_user" Type="uniqueidentifier" />
+          <Property Name="isread_datetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblZayavkaDoc">
+          <Key>
+            <PropertyRef Name="id_zayavkadoc" />
+          </Key>
+          <Property Name="id_zayavka" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="id_doctype" Type="int" Nullable="false" />
+          <Property Name="id_zayavkadoc" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="date_doc_add" Type="datetime" Nullable="false" />
+          <Property Name="doc_file_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="doc_file_path" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="id_chatrec" Type="uniqueidentifier" />
+          <Property Name="is_temp" Type="bit" />
+          <Property Name="id_contract" Type="uniqueidentifier" />
+          <Property Name="id_user" Type="uniqueidentifier" />
+          <Property Name="esign_oke" Type="uniqueidentifier" />
+          <Property Name="esign_kontr" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblZayavkaStatus">
+          <Key>
+            <PropertyRef Name="id_zayavkastatus" />
+          </Key>
+          <Property Name="id_zayavkastatus" Type="int" Nullable="false" />
+          <Property Name="caption_zayavkastatus" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="id_zayavkastatus_1c" Type="binary" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="tblZayavkaType">
+          <Key>
+            <PropertyRef Name="id_zayavkatype" />
+          </Key>
+          <Property Name="id_zayavkatype" Type="int" Nullable="false" />
+          <Property Name="caption_zayavkatype" Type="varchar" MaxLength="500" />
+          <Property Name="id_usertype" Type="int" Nullable="false" />
+          <Property Name="caption_zayavkatype_short" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="R_101">
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="1" />
+          <End Role="tblESignDoc" Type="Self.tblESignDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaDoc">
+              <PropertyRef Name="id_zayavkadoc" />
+            </Principal>
+            <Dependent Role="tblESignDoc">
+              <PropertyRef Name="id_zayavkadoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_103">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="0..1" />
+          <End Role="tblESignDoc" Type="Self.tblESignDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblESignDoc">
+              <PropertyRef Name="verify_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_105">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="0..1" />
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_106">
+          <End Role="tblZayavkaStatus" Type="Self.tblZayavkaStatus" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaStatus">
+              <PropertyRef Name="id_zayavkastatus" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_zayavkastatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_107">
+          <End Role="tblContractStatus" Type="Self.tblContractStatus" Multiplicity="0..1" />
+          <End Role="tblContract" Type="Self.tblContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContractStatus">
+              <PropertyRef Name="id_contractstatus" />
+            </Principal>
+            <Dependent Role="tblContract">
+              <PropertyRef Name="id_contractstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_108">
+          <End Role="tblGP" Type="Self.tblGP" Multiplicity="1" />
+          <End Role="tblGP_Filial" Type="Self.tblGP_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP">
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_Filial">
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_109">
+          <End Role="tblGP_Filial" Type="Self.tblGP_Filial" Multiplicity="1" />
+          <End Role="tblGP_Predstavitel" Type="Self.tblGP_Predstavitel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_Filial">
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_110">
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="0..1" />
+          <End Role="tblGP_DogovorEnergo" Type="Self.tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_111">
+          <End Role="tblGP_Predstavitel" Type="Self.tblGP_Predstavitel" Multiplicity="0..1" />
+          <End Role="tblGP_DogovorEnergo" Type="Self.tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_gp_predstavitel" />
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_gp_predstavitel" />
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_113">
+          <End Role="tblGP_PrichinaDE" Type="Self.tblGP_PrichinaDE" Multiplicity="0..1" />
+          <End Role="tblGP_DogovorEnergo" Type="Self.tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_PrichinaDE">
+              <PropertyRef Name="id_prichinade" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_prichinade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_114">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="0..1" />
+          <End Role="tblGP_Predstavitel" Type="Self.tblGP_Predstavitel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_115">
+          <End Role="tblGP" Type="Self.tblGP" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP">
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_116">
+          <End Role="tblNotifyType" Type="Self.tblNotifyType" Multiplicity="1" />
+          <End Role="tblNotify" Type="Self.tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyType">
+              <PropertyRef Name="id_notifytype" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="id_notifytype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_117">
+          <End Role="tblNotifyStatus" Type="Self.tblNotifyStatus" Multiplicity="0..1" />
+          <End Role="tblNotify" Type="Self.tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyStatus">
+              <PropertyRef Name="id_notifystatus" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="notifystatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_118">
+          <End Role="tblNotifyChannel" Type="Self.tblNotifyChannel" Multiplicity="0..1" />
+          <End Role="tblNotify" Type="Self.tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyChannel">
+              <PropertyRef Name="id_notifychannel" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="id_notifychannel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_119">
+          <End Role="tblUserRegistrationType" Type="Self.tblUserRegistrationType" Multiplicity="0..1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserRegistrationType">
+              <PropertyRef Name="id_registration_typeid" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_registration_typeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_120">
+          <End Role="tblPrichinaPodachiZ" Type="Self.tblPrichinaPodachiZ" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPrichinaPodachiZ">
+              <PropertyRef Name="id_prichinapodachiz" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_prichinapodachiz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_121">
+          <End Role="tblOrderSource" Type="Self.tblOrderSource" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrderSource">
+              <PropertyRef Name="id_ordersource" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_ordersource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_122">
+          <End Role="tblFilial" Type="Self.tblFilial" Multiplicity="1" />
+          <End Role="tblFIASRegionCity" Type="Self.tblFIASRegionCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblFIASRegionCity">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_123">
+          <End Role="tblFIASRegionCity" Type="Self.tblFIASRegionCity" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFIASRegionCity">
+              <PropertyRef Name="id_FIASRegionCity" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_FIASRegionCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_66">
+          <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserType">
+              <PropertyRef Name="id_usertype" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_usertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_67">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_68">
+          <End Role="tblZayavkaType" Type="Self.tblZayavkaType" Multiplicity="1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaType">
+              <PropertyRef Name="id_zayavkatype" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_zayavkatype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_71">
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="1" />
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_73">
+          <End Role="tblDocType" Type="Self.tblDocType" Multiplicity="1" />
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocType">
+              <PropertyRef Name="id_doctype" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_doctype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_74">
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="0..1" />
+          <End Role="tblLog" Type="Self.tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_75">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="0..1" />
+          <End Role="tblLog" Type="Self.tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_77">
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="1" />
+          <End Role="tblZayavkaChat" Type="Self.tblZayavkaChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblZayavkaChat">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_78">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="1" />
+          <End Role="tblZayavkaChat" Type="Self.tblZayavkaChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavkaChat">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_80">
+          <End Role="tblUserRole" Type="Self.tblUserRole" Multiplicity="1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserRole">
+              <PropertyRef Name="id_userrole" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_userrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_81">
+          <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="1" />
+          <End Role="tblZayavkaType" Type="Self.tblZayavkaType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserType">
+              <PropertyRef Name="id_usertype" />
+            </Principal>
+            <Dependent Role="tblZayavkaType">
+              <PropertyRef Name="id_usertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_82">
+          <End Role="tblLogEventType" Type="Self.tblLogEventType" Multiplicity="1" />
+          <End Role="tblLog" Type="Self.tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLogEventType">
+              <PropertyRef Name="id_logeventtype" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_logeventtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_83">
+          <End Role="tblFilial" Type="Self.tblFilial" Multiplicity="0..1" />
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_84">
+          <End Role="tblZayavka" Type="Self.tblZayavka" Multiplicity="0..1" />
+          <End Role="tblContract" Type="Self.tblContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblContract">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_91">
+          <End Role="tblContract" Type="Self.tblContract" Multiplicity="1" />
+          <End Role="tblContractDoc" Type="Self.tblContractDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContract">
+              <PropertyRef Name="id_contract" />
+            </Principal>
+            <Dependent Role="tblContractDoc">
+              <PropertyRef Name="id_contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_92">
+          <End Role="tblDocType" Type="Self.tblDocType" Multiplicity="1" />
+          <End Role="tblContractDoc" Type="Self.tblContractDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocType">
+              <PropertyRef Name="id_doctype" />
+            </Principal>
+            <Dependent Role="tblContractDoc">
+              <PropertyRef Name="id_doctype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_96">
+          <End Role="tblFilial" Type="Self.tblFilial" Multiplicity="1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_98">
+          <End Role="tblZayavkaChat" Type="Self.tblZayavkaChat" Multiplicity="0..1" />
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaChat">
+              <PropertyRef Name="id_chatrec" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_chatrec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище perscabnewModelContainer">
+          <EntitySet Name="tbl1C_CenovayaKategoriya" EntityType="Self.tbl1C_CenovayaKategoriya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl1C_EnumUrovenU" EntityType="Self.tbl1C_EnumUrovenU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl1C_StatusOplaty" EntityType="Self.tbl1C_StatusOplaty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl1C_VidRassrochki" EntityType="Self.tbl1C_VidRassrochki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl1C_VidZayavki" EntityType="Self.tbl1C_VidZayavki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContract" EntityType="Self.tblContract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContractDoc" EntityType="Self.tblContractDoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContractStatus" EntityType="Self.tblContractStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDocType" EntityType="Self.tblDocType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblESignDoc" EntityType="Self.tblESignDoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFIASRegionCity" EntityType="Self.tblFIASRegionCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFilial" EntityType="Self.tblFilial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGP" EntityType="Self.tblGP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGP_DogovorEnergo" EntityType="Self.tblGP_DogovorEnergo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGP_Filial" EntityType="Self.tblGP_Filial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGP_Predstavitel" EntityType="Self.tblGP_Predstavitel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblGP_PrichinaDE" EntityType="Self.tblGP_PrichinaDE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLog" EntityType="Self.tblLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblLogEventType" EntityType="Self.tblLogEventType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotify" EntityType="Self.tblNotify" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotifyChannel" EntityType="Self.tblNotifyChannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotifyStatus" EntityType="Self.tblNotifyStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblNotifyType" EntityType="Self.tblNotifyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrderSource" EntityType="Self.tblOrderSource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPrichinaPodachiZ" EntityType="Self.tblPrichinaPodachiZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserInfo" EntityType="Self.tblUserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserRegistrationType" EntityType="Self.tblUserRegistrationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserRole" EntityType="Self.tblUserRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserType" EntityType="Self.tblUserType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblZayavka" EntityType="Self.tblZayavka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblZayavkaChat" EntityType="Self.tblZayavkaChat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblZayavkaDoc" EntityType="Self.tblZayavkaDoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblZayavkaStatus" EntityType="Self.tblZayavkaStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblZayavkaType" EntityType="Self.tblZayavkaType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="R_101" Association="Self.R_101">
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+            <End Role="tblESignDoc" EntitySet="tblESignDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_103" Association="Self.R_103">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblESignDoc" EntitySet="tblESignDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_105" Association="Self.R_105">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_106" Association="Self.R_106">
+            <End Role="tblZayavkaStatus" EntitySet="tblZayavkaStatus" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_107" Association="Self.R_107">
+            <End Role="tblContractStatus" EntitySet="tblContractStatus" />
+            <End Role="tblContract" EntitySet="tblContract" />
+          </AssociationSet>
+          <AssociationSet Name="R_108" Association="Self.R_108">
+            <End Role="tblGP" EntitySet="tblGP" />
+            <End Role="tblGP_Filial" EntitySet="tblGP_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="R_109" Association="Self.R_109">
+            <End Role="tblGP_Filial" EntitySet="tblGP_Filial" />
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+          </AssociationSet>
+          <AssociationSet Name="R_110" Association="Self.R_110">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_111" Association="Self.R_111">
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_113" Association="Self.R_113">
+            <End Role="tblGP_PrichinaDE" EntitySet="tblGP_PrichinaDE" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_114" Association="Self.R_114">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+          </AssociationSet>
+          <AssociationSet Name="R_115" Association="Self.R_115">
+            <End Role="tblGP" EntitySet="tblGP" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_116" Association="Self.R_116">
+            <End Role="tblNotifyType" EntitySet="tblNotifyType" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <AssociationSet Name="R_117" Association="Self.R_117">
+            <End Role="tblNotifyStatus" EntitySet="tblNotifyStatus" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <AssociationSet Name="R_118" Association="Self.R_118">
+            <End Role="tblNotifyChannel" EntitySet="tblNotifyChannel" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <AssociationSet Name="R_119" Association="Self.R_119">
+            <End Role="tblUserRegistrationType" EntitySet="tblUserRegistrationType" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_120" Association="Self.R_120">
+            <End Role="tblPrichinaPodachiZ" EntitySet="tblPrichinaPodachiZ" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_121" Association="Self.R_121">
+            <End Role="tblOrderSource" EntitySet="tblOrderSource" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_122" Association="Self.R_122">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblFIASRegionCity" EntitySet="tblFIASRegionCity" />
+          </AssociationSet>
+          <AssociationSet Name="R_123" Association="Self.R_123">
+            <End Role="tblFIASRegionCity" EntitySet="tblFIASRegionCity" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_66" Association="Self.R_66">
+            <End Role="tblUserType" EntitySet="tblUserType" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_67" Association="Self.R_67">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_68" Association="Self.R_68">
+            <End Role="tblZayavkaType" EntitySet="tblZayavkaType" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_71" Association="Self.R_71">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_73" Association="Self.R_73">
+            <End Role="tblDocType" EntitySet="tblDocType" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_74" Association="Self.R_74">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <AssociationSet Name="R_75" Association="Self.R_75">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <AssociationSet Name="R_77" Association="Self.R_77">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+          </AssociationSet>
+          <AssociationSet Name="R_78" Association="Self.R_78">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+          </AssociationSet>
+          <AssociationSet Name="R_80" Association="Self.R_80">
+            <End Role="tblUserRole" EntitySet="tblUserRole" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_81" Association="Self.R_81">
+            <End Role="tblUserType" EntitySet="tblUserType" />
+            <End Role="tblZayavkaType" EntitySet="tblZayavkaType" />
+          </AssociationSet>
+          <AssociationSet Name="R_82" Association="Self.R_82">
+            <End Role="tblLogEventType" EntitySet="tblLogEventType" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <AssociationSet Name="R_83" Association="Self.R_83">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_84" Association="Self.R_84">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblContract" EntitySet="tblContract" />
+          </AssociationSet>
+          <AssociationSet Name="R_91" Association="Self.R_91">
+            <End Role="tblContract" EntitySet="tblContract" />
+            <End Role="tblContractDoc" EntitySet="tblContractDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_92" Association="Self.R_92">
+            <End Role="tblDocType" EntitySet="tblDocType" />
+            <End Role="tblContractDoc" EntitySet="tblContractDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_96" Association="Self.R_96">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_98" Association="Self.R_98">
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="perscabnewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblDocType">
+          <Key>
+            <PropertyRef Name="id_doctype" />
+          </Key>
+          <Property Name="id_doctype" Type="Int32" Nullable="false" />
+          <Property Name="caption_doctype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblZayavkaDoc" Relationship="Self.R_73" FromRole="tblDocType" ToRole="tblZayavkaDoc" />
+          <NavigationProperty Name="tblContractDoc" Relationship="perscabnewModel.R_92" FromRole="tblDocType" ToRole="tblContractDoc" />
+        </EntityType>
+        <EntityType Name="tblUserInfo">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="date_create_user" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_user" Type="Guid" Nullable="false" />
+          <Property Name="fl_familiya" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fl_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fl_otchestvo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="yl_fullname" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="yl_shortname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="inn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contact_familiya" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="contact_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contact_otchestvo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="confirm_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="confirm_code_date_send" Type="DateTime" Precision="3" />
+          <Property Name="comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_usertype" Type="Int32" Nullable="false" />
+          <Property Name="id_userrole" Type="Int32" Nullable="false" />
+          <Property Name="password_text" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUserType" Relationship="Self.R_66" FromRole="tblUserInfo" ToRole="tblUserType" />
+          <NavigationProperty Name="tblZayavkaChat" Relationship="Self.R_78" FromRole="tblUserInfo" ToRole="tblZayavkaChat" />
+          <NavigationProperty Name="tblUserRole" Relationship="Self.R_80" FromRole="tblUserInfo" ToRole="tblUserRole" />
+          <NavigationProperty Name="tblLog" Relationship="perscabnewModel.R_75" FromRole="tblUserInfo" ToRole="tblLog" />
+          <Property Name="user_login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_nameingrid" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="id_filial" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFilial" Relationship="perscabnewModel.R_96" FromRole="tblUserInfo" ToRole="tblFilial" />
+          <NavigationProperty Name="tblESignDoc" Relationship="perscabnewModel.R_103" FromRole="tblUserInfo" ToRole="tblESignDoc" />
+          <NavigationProperty Name="tblGP_Predstavitel" Relationship="perscabnewModel.R_114" FromRole="tblUserInfo" ToRole="tblGP_Predstavitel" />
+          <NavigationProperty Name="tblZayavkaDoc" Relationship="perscabnewModel.R_105" FromRole="tblUserInfo" ToRole="tblZayavkaDoc" />
+          <Property Name="id_registration_typeid" Type="Guid" />
+          <NavigationProperty Name="tblUserRegistrationType" Relationship="perscabnewModel.R_119" FromRole="tblUserInfo" ToRole="tblUserRegistrationType" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsLockedOut" Type="Boolean" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_67" FromRole="tblUserInfo" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblUserRole">
+          <Key>
+            <PropertyRef Name="id_userrole" />
+          </Key>
+          <Property Name="id_userrole" Type="Int32" Nullable="false" />
+          <Property Name="caption_userrole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblUserInfo" Relationship="Self.R_80" FromRole="tblUserRole" ToRole="tblUserInfo" />
+        </EntityType>
+        <EntityType Name="tblUserType">
+          <Key>
+            <PropertyRef Name="id_usertype" />
+          </Key>
+          <Property Name="id_usertype" Type="Int32" Nullable="false" />
+          <Property Name="caption_usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblUserInfo" Relationship="Self.R_66" FromRole="tblUserType" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblZayavkaType" Relationship="Self.R_81" FromRole="tblUserType" ToRole="tblZayavkaType" />
+        </EntityType>
+        <EntityType Name="tblZayavkaChat">
+          <Key>
+            <PropertyRef Name="id_chatrec" />
+          </Key>
+          <Property Name="id_zayavka" Type="Guid" Nullable="false" />
+          <Property Name="id_chatrec" Type="Guid" Nullable="false" />
+          <Property Name="caption_msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="Guid" Nullable="false" />
+          <Property Name="chatrec_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblUserInfo" Relationship="Self.R_78" FromRole="tblZayavkaChat" ToRole="tblUserInfo" />
+          <Property Name="istemp" Type="Boolean" />
+          <NavigationProperty Name="tblZayavkaDoc" Relationship="perscabnewModel.R_98" FromRole="tblZayavkaChat" ToRole="tblZayavkaDoc" />
+          <Property Name="isread" Type="Boolean" />
+          <Property Name="isread_user" Type="Guid" />
+          <Property Name="isread_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_77" FromRole="tblZayavkaChat" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblZayavkaDoc">
+          <Key>
+            <PropertyRef Name="id_zayavkadoc" />
+          </Key>
+          <Property Name="id_zayavka" Type="Guid" Nullable="false" />
+          <Property Name="id_doctype" Type="Int32" Nullable="false" />
+          <Property Name="id_zayavkadoc" Type="Guid" Nullable="false" />
+          <Property Name="date_doc_add" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="doc_file_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tblDocType" Relationship="Self.R_73" FromRole="tblZayavkaDoc" ToRole="tblDocType" />
+          <Property Name="doc_file_path" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id_chatrec" Type="Guid" />
+          <Property Name="is_temp" Type="Boolean" />
+          <NavigationProperty Name="tblZayavkaChat" Relationship="perscabnewModel.R_98" FromRole="tblZayavkaDoc" ToRole="tblZayavkaChat" />
+          <Property Name="id_contract" Type="Guid" />
+          <NavigationProperty Name="tblESignDoc" Relationship="perscabnewModel.R_101" FromRole="tblZayavkaDoc" ToRole="tblESignDoc" />
+          <Property Name="id_user" Type="Guid" />
+          <Property Name="esign_oke" Type="Guid" />
+          <Property Name="esign_kontr" Type="Guid" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_105" FromRole="tblZayavkaDoc" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_71" FromRole="tblZayavkaDoc" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblZayavkaType">
+          <Key>
+            <PropertyRef Name="id_zayavkatype" />
+          </Key>
+          <Property Name="id_zayavkatype" Type="Int32" Nullable="false" />
+          <Property Name="caption_zayavkatype" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="id_usertype" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblUserType" Relationship="Self.R_81" FromRole="tblZayavkaType" ToRole="tblUserType" />
+          <Property Name="caption_zayavkatype_short" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_68" FromRole="tblZayavkaType" ToRole="tblZayavka" />
+        </EntityType>
+        <Association Name="R_73">
+          <End Role="tblDocType" Type="Self.tblDocType" Multiplicity="1" />
+          <End Role="tblZayavkaDoc" Type="Self.tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocType">
+              <PropertyRef Name="id_doctype" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_doctype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_66">
+          <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserType">
+              <PropertyRef Name="id_usertype" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_usertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_78">
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="1" />
+          <End Role="tblZayavkaChat" Type="Self.tblZayavkaChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavkaChat">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_80">
+          <End Role="tblUserRole" Type="Self.tblUserRole" Multiplicity="1" />
+          <End Role="tblUserInfo" Type="Self.tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserRole">
+              <PropertyRef Name="id_userrole" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_userrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_81">
+          <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="1" />
+          <End Role="tblZayavkaType" Type="Self.tblZayavkaType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserType">
+              <PropertyRef Name="id_usertype" />
+            </Principal>
+            <Dependent Role="tblZayavkaType">
+              <PropertyRef Name="id_usertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="perscabnewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDocType" EntityType="Self.tblDocType" />
+          <EntitySet Name="tblUserInfo" EntityType="Self.tblUserInfo" />
+          <EntitySet Name="tblUserRole" EntityType="Self.tblUserRole" />
+          <EntitySet Name="tblUserType" EntityType="Self.tblUserType" />
+          <EntitySet Name="tblZayavkaChat" EntityType="Self.tblZayavkaChat" />
+          <EntitySet Name="tblZayavkaDoc" EntityType="Self.tblZayavkaDoc" />
+          <EntitySet Name="tblZayavkaType" EntityType="Self.tblZayavkaType" />
+          <AssociationSet Name="R_73" Association="Self.R_73">
+            <End Role="tblDocType" EntitySet="tblDocType" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_66" Association="Self.R_66">
+            <End Role="tblUserType" EntitySet="tblUserType" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_78" Association="Self.R_78">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+          </AssociationSet>
+          <AssociationSet Name="R_80" Association="Self.R_80">
+            <End Role="tblUserRole" EntitySet="tblUserRole" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_81" Association="Self.R_81">
+            <End Role="tblUserType" EntitySet="tblUserType" />
+            <End Role="tblZayavkaType" EntitySet="tblZayavkaType" />
+          </AssociationSet>
+          <EntitySet Name="tblLog" EntityType="perscabnewModel.tblLog" />
+          <AssociationSet Name="R_75" Association="perscabnewModel.R_75">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <EntitySet Name="tblContract" EntityType="perscabnewModel.tblContract" />
+          <EntitySet Name="tblContractDoc" EntityType="perscabnewModel.tblContractDoc" />
+          <EntitySet Name="tblContractStatus" EntityType="perscabnewModel.tblContractStatus" />
+          <EntitySet Name="tblFilial" EntityType="perscabnewModel.tblFilial" />
+          <EntitySet Name="tblZayavkaStatus" EntityType="perscabnewModel.tblZayavkaStatus" />
+          <AssociationSet Name="R_91" Association="perscabnewModel.R_91">
+            <End Role="tblContract" EntitySet="tblContract" />
+            <End Role="tblContractDoc" EntitySet="tblContractDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_92" Association="perscabnewModel.R_92">
+            <End Role="tblDocType" EntitySet="tblDocType" />
+            <End Role="tblContractDoc" EntitySet="tblContractDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_96" Association="perscabnewModel.R_96">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="R_98" Association="perscabnewModel.R_98">
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <EntitySet Name="tblESignDoc" EntityType="perscabnewModel.tblESignDoc" />
+          <AssociationSet Name="R_101" Association="perscabnewModel.R_101">
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+            <End Role="tblESignDoc" EntitySet="tblESignDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_103" Association="perscabnewModel.R_103">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblESignDoc" EntitySet="tblESignDoc" />
+          </AssociationSet>
+          <EntitySet Name="tblGP" EntityType="perscabnewModel.tblGP" />
+          <EntitySet Name="tblGP_Filial" EntityType="perscabnewModel.tblGP_Filial" />
+          <EntitySet Name="tblGP_Predstavitel" EntityType="perscabnewModel.tblGP_Predstavitel" />
+          <EntitySet Name="tblGP_PrichinaDE" EntityType="perscabnewModel.tblGP_PrichinaDE" />
+          <AssociationSet Name="R_107" Association="perscabnewModel.R_107">
+            <End Role="tblContractStatus" EntitySet="tblContractStatus" />
+            <End Role="tblContract" EntitySet="tblContract" />
+          </AssociationSet>
+          <AssociationSet Name="R_108" Association="perscabnewModel.R_108">
+            <End Role="tblGP" EntitySet="tblGP" />
+            <End Role="tblGP_Filial" EntitySet="tblGP_Filial" />
+          </AssociationSet>
+          <AssociationSet Name="R_109" Association="perscabnewModel.R_109">
+            <End Role="tblGP_Filial" EntitySet="tblGP_Filial" />
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+          </AssociationSet>
+          <AssociationSet Name="R_114" Association="perscabnewModel.R_114">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+          </AssociationSet>
+          <AssociationSet Name="R_105" Association="perscabnewModel.R_105">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <EntitySet Name="tbl1C_CenovayaKategoriya" EntityType="perscabnewModel.tbl1C_CenovayaKategoriya" />
+          <EntitySet Name="tbl1C_EnumUrovenU" EntityType="perscabnewModel.tbl1C_EnumUrovenU" />
+          <EntitySet Name="tbl1C_StatusOplaty" EntityType="perscabnewModel.tbl1C_StatusOplaty" />
+          <EntitySet Name="tbl1C_VidRassrochki" EntityType="perscabnewModel.tbl1C_VidRassrochki" />
+          <EntitySet Name="tbl1C_VidZayavki" EntityType="perscabnewModel.tbl1C_VidZayavki" />
+          <EntitySet Name="tblGP_DogovorEnergo" EntityType="perscabnewModel.tblGP_DogovorEnergo" />
+          <EntitySet Name="tblLogEventType" EntityType="perscabnewModel.tblLogEventType" />
+          <AssociationSet Name="R_111" Association="perscabnewModel.R_111">
+            <End Role="tblGP_Predstavitel" EntitySet="tblGP_Predstavitel" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_113" Association="perscabnewModel.R_113">
+            <End Role="tblGP_PrichinaDE" EntitySet="tblGP_PrichinaDE" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_82" Association="perscabnewModel.R_82">
+            <End Role="tblLogEventType" EntitySet="tblLogEventType" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <EntitySet Name="tblNotify" EntityType="perscabnewModel.tblNotify" />
+          <EntitySet Name="tblNotifyStatus" EntityType="perscabnewModel.tblNotifyStatus" />
+          <EntitySet Name="tblNotifyType" EntityType="perscabnewModel.tblNotifyType" />
+          <EntitySet Name="tblUserRegistrationType" EntityType="perscabnewModel.tblUserRegistrationType" />
+          <AssociationSet Name="R_116" Association="perscabnewModel.R_116">
+            <End Role="tblNotifyType" EntitySet="tblNotifyType" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <AssociationSet Name="R_117" Association="perscabnewModel.R_117">
+            <End Role="tblNotifyStatus" EntitySet="tblNotifyStatus" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <AssociationSet Name="R_119" Association="perscabnewModel.R_119">
+            <End Role="tblUserRegistrationType" EntitySet="tblUserRegistrationType" />
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+          </AssociationSet>
+          <EntitySet Name="tblNotifyChannel" EntityType="perscabnewModel.tblNotifyChannel" />
+          <AssociationSet Name="R_118" Association="perscabnewModel.R_118">
+            <End Role="tblNotifyChannel" EntitySet="tblNotifyChannel" />
+            <End Role="tblNotify" EntitySet="tblNotify" />
+          </AssociationSet>
+          <EntitySet Name="tblPrichinaPodachiZ" EntityType="perscabnewModel.tblPrichinaPodachiZ" />
+          <EntitySet Name="tblOrderSource" EntityType="perscabnewModel.tblOrderSource" />
+          <EntitySet Name="tblFIASRegionCity" EntityType="perscabnewModel.tblFIASRegionCity" />
+          <AssociationSet Name="R_122" Association="perscabnewModel.R_122">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblFIASRegionCity" EntitySet="tblFIASRegionCity" />
+          </AssociationSet>
+          <EntitySet Name="tblZayavka" EntityType="perscabnewModel.tblZayavka" />
+          <AssociationSet Name="R_84" Association="perscabnewModel.R_84">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblContract" EntitySet="tblContract" />
+          </AssociationSet>
+          <AssociationSet Name="R_123" Association="perscabnewModel.R_123">
+            <End Role="tblFIASRegionCity" EntitySet="tblFIASRegionCity" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_83" Association="perscabnewModel.R_83">
+            <End Role="tblFilial" EntitySet="tblFilial" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_115" Association="perscabnewModel.R_115">
+            <End Role="tblGP" EntitySet="tblGP" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_110" Association="perscabnewModel.R_110">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblGP_DogovorEnergo" EntitySet="tblGP_DogovorEnergo" />
+          </AssociationSet>
+          <AssociationSet Name="R_74" Association="perscabnewModel.R_74">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblLog" EntitySet="tblLog" />
+          </AssociationSet>
+          <AssociationSet Name="R_121" Association="perscabnewModel.R_121">
+            <End Role="tblOrderSource" EntitySet="tblOrderSource" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_120" Association="perscabnewModel.R_120">
+            <End Role="tblPrichinaPodachiZ" EntitySet="tblPrichinaPodachiZ" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_67" Association="perscabnewModel.R_67">
+            <End Role="tblUserInfo" EntitySet="tblUserInfo" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_106" Association="perscabnewModel.R_106">
+            <End Role="tblZayavkaStatus" EntitySet="tblZayavkaStatus" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_68" Association="perscabnewModel.R_68">
+            <End Role="tblZayavkaType" EntitySet="tblZayavkaType" />
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+          </AssociationSet>
+          <AssociationSet Name="R_71" Association="perscabnewModel.R_71">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblZayavkaDoc" EntitySet="tblZayavkaDoc" />
+          </AssociationSet>
+          <AssociationSet Name="R_77" Association="perscabnewModel.R_77">
+            <End Role="tblZayavka" EntitySet="tblZayavka" />
+            <End Role="tblZayavkaChat" EntitySet="tblZayavkaChat" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="tblLog">
+          <Key>
+            <PropertyRef Name="id_logrec" />
+            <PropertyRef Name="id_logeventtype" />
+          </Key>
+          <Property Name="id_zayavka" Type="Guid" />
+          <Property Name="id_user" Type="Guid" />
+          <Property Name="comment_log" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_logrec" Type="Guid" Nullable="false" />
+          <Property Name="logrec_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_logeventtype" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_75" FromRole="tblLog" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblLogEventType" Relationship="perscabnewModel.R_82" FromRole="tblLog" ToRole="tblLogEventType" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_74" FromRole="tblLog" ToRole="tblZayavka" />
+        </EntityType>
+        <Association Name="R_75">
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblLog" Role="tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblContract">
+          <Key>
+            <PropertyRef Name="id_contract" />
+          </Key>
+          <Property Name="id_contract" Type="Guid" Nullable="false" />
+          <Property Name="id_zayavka" Type="Guid" />
+          <Property Name="contract_number_1c" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contract_date_1c" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblContractDoc" Relationship="perscabnewModel.R_91" FromRole="tblContract" ToRole="tblContractDoc" />
+          <Property Name="id_contractstatus" Type="Int32" />
+          <NavigationProperty Name="tblContractStatus" Relationship="perscabnewModel.R_107" FromRole="tblContract" ToRole="tblContractStatus" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_84" FromRole="tblContract" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblContractDoc">
+          <Key>
+            <PropertyRef Name="id_contractdoc" />
+          </Key>
+          <Property Name="id_contractdoc" Type="Guid" Nullable="false" />
+          <Property Name="id_contract" Type="Guid" Nullable="false" />
+          <Property Name="date_doc_add" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="doc_file_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doc_file_path" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_doctype" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblContract" Relationship="perscabnewModel.R_91" FromRole="tblContractDoc" ToRole="tblContract" />
+          <NavigationProperty Name="tblDocType" Relationship="perscabnewModel.R_92" FromRole="tblContractDoc" ToRole="tblDocType" />
+        </EntityType>
+        <EntityType Name="tblContractStatus">
+          <Key>
+            <PropertyRef Name="id_contractstatus" />
+          </Key>
+          <Property Name="id_contractstatus" Type="Int32" Nullable="false" />
+          <Property Name="caption_contractstatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_contractstatus_1c" Type="Binary" MaxLength="16" FixedLength="true" />
+          <NavigationProperty Name="tblContract" Relationship="perscabnewModel.R_107" FromRole="tblContractStatus" ToRole="tblContract" />
+        </EntityType>
+        <EntityType Name="tblFilial">
+          <Key>
+            <PropertyRef Name="id_filial" />
+          </Key>
+          <Property Name="id_filial" Type="Int32" Nullable="false" />
+          <Property Name="caption_filial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="caption_filial_short" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_96" FromRole="tblFilial" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblFIASRegionCity" Relationship="perscabnewModel.R_122" FromRole="tblFilial" ToRole="tblFIASRegionCity" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_83" FromRole="tblFilial" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblZayavkaStatus">
+          <Key>
+            <PropertyRef Name="id_zayavkastatus" />
+          </Key>
+          <Property Name="id_zayavkastatus" Type="Int32" Nullable="false" />
+          <Property Name="caption_zayavkastatus" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="id_zayavkastatus_1c" Type="Binary" MaxLength="16" FixedLength="true" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_106" FromRole="tblZayavkaStatus" ToRole="tblZayavka" />
+        </EntityType>
+        <Association Name="R_91">
+          <End Type="perscabnewModel.tblContract" Role="tblContract" Multiplicity="1" />
+          <End Type="perscabnewModel.tblContractDoc" Role="tblContractDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContract">
+              <PropertyRef Name="id_contract" />
+            </Principal>
+            <Dependent Role="tblContractDoc">
+              <PropertyRef Name="id_contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_92">
+          <End Type="perscabnewModel.tblDocType" Role="tblDocType" Multiplicity="1" />
+          <End Type="perscabnewModel.tblContractDoc" Role="tblContractDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDocType">
+              <PropertyRef Name="id_doctype" />
+            </Principal>
+            <Dependent Role="tblContractDoc">
+              <PropertyRef Name="id_doctype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_96">
+          <End Type="perscabnewModel.tblFilial" Role="tblFilial" Multiplicity="1" />
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_98">
+          <End Type="perscabnewModel.tblZayavkaChat" Role="tblZayavkaChat" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavkaDoc" Role="tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaChat">
+              <PropertyRef Name="id_chatrec" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_chatrec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblESignDoc">
+          <Key>
+            <PropertyRef Name="id_esign" />
+          </Key>
+          <Property Name="id_esign" Type="Guid" Nullable="false" />
+          <Property Name="id_zayavkadoc" Type="Guid" Nullable="false" />
+          <Property Name="verify_status" Type="Boolean" />
+          <Property Name="verify_user" Type="Guid" />
+          <Property Name="verify_datetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tblZayavkaDoc" Relationship="perscabnewModel.R_101" FromRole="tblESignDoc" ToRole="tblZayavkaDoc" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_103" FromRole="tblESignDoc" ToRole="tblUserInfo" />
+          <Property Name="esign_docid" Type="Guid" Nullable="false" />
+          <Property Name="esign_user" Type="Guid" Nullable="false" />
+          <Property Name="esign_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="R_101">
+          <End Type="perscabnewModel.tblZayavkaDoc" Role="tblZayavkaDoc" Multiplicity="1" />
+          <End Type="perscabnewModel.tblESignDoc" Role="tblESignDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaDoc">
+              <PropertyRef Name="id_zayavkadoc" />
+            </Principal>
+            <Dependent Role="tblESignDoc">
+              <PropertyRef Name="id_zayavkadoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_103">
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblESignDoc" Role="tblESignDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblESignDoc">
+              <PropertyRef Name="verify_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblGP">
+          <Key>
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp" Type="Guid" Nullable="false" />
+          <Property Name="caption_GP" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblGP_Filial" Relationship="perscabnewModel.R_108" FromRole="tblGP" ToRole="tblGP_Filial" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_115" FromRole="tblGP" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblGP_Filial">
+          <Key>
+            <PropertyRef Name="id_gp_filial" />
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp_filial" Type="Guid" Nullable="false" />
+          <Property Name="id_gp" Type="Guid" Nullable="false" />
+          <Property Name="caption_GP_filial" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblGP" Relationship="perscabnewModel.R_108" FromRole="tblGP_Filial" ToRole="tblGP" />
+          <NavigationProperty Name="tblGP_Predstavitel" Relationship="perscabnewModel.R_109" FromRole="tblGP_Filial" ToRole="tblGP_Predstavitel" />
+        </EntityType>
+        <EntityType Name="tblGP_Predstavitel">
+          <Key>
+            <PropertyRef Name="id_gp_predstavitel" />
+            <PropertyRef Name="id_gp_filial" />
+            <PropertyRef Name="id_gp" />
+          </Key>
+          <Property Name="id_gp_predstavitel" Type="Guid" Nullable="false" />
+          <Property Name="name_predstavitel" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id_gp_filial" Type="Guid" Nullable="false" />
+          <Property Name="id_gp" Type="Guid" Nullable="false" />
+          <Property Name="id_user" Type="Guid" />
+          <NavigationProperty Name="tblGP_Filial" Relationship="perscabnewModel.R_109" FromRole="tblGP_Predstavitel" ToRole="tblGP_Filial" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_114" FromRole="tblGP_Predstavitel" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblGP_DogovorEnergo" Relationship="perscabnewModel.R_111" FromRole="tblGP_Predstavitel" ToRole="tblGP_DogovorEnergo" />
+        </EntityType>
+        <EntityType Name="tblGP_PrichinaDE">
+          <Key>
+            <PropertyRef Name="id_prichinade" />
+          </Key>
+          <Property Name="id_prichinade" Type="Guid" Nullable="false" />
+          <Property Name="caption_prichinade" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblGP_DogovorEnergo" Relationship="perscabnewModel.R_113" FromRole="tblGP_PrichinaDE" ToRole="tblGP_DogovorEnergo" />
+        </EntityType>
+        <Association Name="R_107">
+          <End Type="perscabnewModel.tblContractStatus" Role="tblContractStatus" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblContract" Role="tblContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContractStatus">
+              <PropertyRef Name="id_contractstatus" />
+            </Principal>
+            <Dependent Role="tblContract">
+              <PropertyRef Name="id_contractstatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_108">
+          <End Type="perscabnewModel.tblGP" Role="tblGP" Multiplicity="1" />
+          <End Type="perscabnewModel.tblGP_Filial" Role="tblGP_Filial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP">
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_Filial">
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_109">
+          <End Type="perscabnewModel.tblGP_Filial" Role="tblGP_Filial" Multiplicity="1" />
+          <End Type="perscabnewModel.tblGP_Predstavitel" Role="tblGP_Predstavitel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_Filial">
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_114">
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblGP_Predstavitel" Role="tblGP_Predstavitel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_105">
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavkaDoc" Role="tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl1C_CenovayaKategoriya">
+          <Key>
+            <PropertyRef Name="C_IDRref" />
+          </Key>
+          <Property Name="C_IDRref" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+          <Property Name="C_EnumOrder" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl1C_EnumUrovenU">
+          <Key>
+            <PropertyRef Name="C_IDRref" />
+          </Key>
+          <Property Name="C_IDRref" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+          <Property Name="C_EnumOrder" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl1C_StatusOplaty">
+          <Key>
+            <PropertyRef Name="C_IDRref" />
+          </Key>
+          <Property Name="C_IDRref" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+          <Property Name="C_EnumOrder" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl1C_VidRassrochki">
+          <Key>
+            <PropertyRef Name="C_IDRref" />
+          </Key>
+          <Property Name="C_IDRref" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+          <Property Name="C_EnumOrder" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl1C_VidZayavki">
+          <Key>
+            <PropertyRef Name="C_IDRref" />
+          </Key>
+          <Property Name="C_IDRref" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+          <Property Name="C_EnumOrder" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblGP_DogovorEnergo">
+          <Key>
+            <PropertyRef Name="id_dogovorenergo" />
+          </Key>
+          <Property Name="id_dogovorenergo" Type="Guid" Nullable="false" />
+          <Property Name="id_zayavka" Type="Guid" />
+          <Property Name="id_gp_predstavitel" Type="Guid" />
+          <Property Name="id_gp_filial" Type="Guid" />
+          <Property Name="id_gp" Type="Guid" />
+          <Property Name="id_prichinade" Type="Guid" />
+          <Property Name="nomer_ls" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nomer_dogovorenergo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nomer_elektroustanovka" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="date_create_de" Type="DateTime" Precision="3" />
+          <Property Name="date_podpis_de" Type="DateTime" Precision="3" />
+          <Property Name="id_cenovayakategoriya" Type="Binary" MaxLength="16" FixedLength="true" />
+          <NavigationProperty Name="tblGP_Predstavitel" Relationship="perscabnewModel.R_111" FromRole="tblGP_DogovorEnergo" ToRole="tblGP_Predstavitel" />
+          <NavigationProperty Name="tblGP_PrichinaDE" Relationship="perscabnewModel.R_113" FromRole="tblGP_DogovorEnergo" ToRole="tblGP_PrichinaDE" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_110" FromRole="tblGP_DogovorEnergo" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblLogEventType">
+          <Key>
+            <PropertyRef Name="id_logeventtype" />
+          </Key>
+          <Property Name="id_logeventtype" Type="Int32" Nullable="false" />
+          <Property Name="caption_logeventtype" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblLog" Relationship="perscabnewModel.R_82" FromRole="tblLogEventType" ToRole="tblLog" />
+        </EntityType>
+        <Association Name="R_111">
+          <End Type="perscabnewModel.tblGP_Predstavitel" Role="tblGP_Predstavitel" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblGP_DogovorEnergo" Role="tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_Predstavitel">
+              <PropertyRef Name="id_gp_predstavitel" />
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_gp_predstavitel" />
+              <PropertyRef Name="id_gp_filial" />
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_113">
+          <End Type="perscabnewModel.tblGP_PrichinaDE" Role="tblGP_PrichinaDE" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblGP_DogovorEnergo" Role="tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP_PrichinaDE">
+              <PropertyRef Name="id_prichinade" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_prichinade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_82">
+          <End Type="perscabnewModel.tblLogEventType" Role="tblLogEventType" Multiplicity="1" />
+          <End Type="perscabnewModel.tblLog" Role="tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLogEventType">
+              <PropertyRef Name="id_logeventtype" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_logeventtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblNotify">
+          <Key>
+            <PropertyRef Name="id_notify" />
+          </Key>
+          <Property Name="id_notify" Type="Guid" Nullable="false" />
+          <Property Name="id_notifytype" Type="Guid" Nullable="false" />
+          <Property Name="date_create_notify" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="recipient_id" Type="Guid" />
+          <Property Name="notifystatus_id" Type="Guid" />
+          <Property Name="notify_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="priority" Type="Int32" Nullable="false" />
+          <Property Name="date_send_notify" Type="DateTime" Precision="0" />
+          <Property Name="id_notifychannel" Type="Guid" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="date_plan_notify" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="tblNotifyType" Relationship="perscabnewModel.R_116" FromRole="tblNotify" ToRole="tblNotifyType" />
+          <NavigationProperty Name="tblNotifyStatus" Relationship="perscabnewModel.R_117" FromRole="tblNotify" ToRole="tblNotifyStatus" />
+          <Property Name="link_id" Type="Guid" />
+          <NavigationProperty Name="tblNotifyChannel" Relationship="perscabnewModel.R_118" FromRole="tblNotify" ToRole="tblNotifyChannel" />
+          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblNotifyStatus">
+          <Key>
+            <PropertyRef Name="id_notifystatus" />
+          </Key>
+          <Property Name="id_notifystatus" Type="Guid" Nullable="false" />
+          <Property Name="caption_notifystatus" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblNotify" Relationship="perscabnewModel.R_117" FromRole="tblNotifyStatus" ToRole="tblNotify" />
+        </EntityType>
+        <EntityType Name="tblNotifyType">
+          <Key>
+            <PropertyRef Name="id_notifytype" />
+          </Key>
+          <Property Name="id_notifytype" Type="Guid" Nullable="false" />
+          <Property Name="caption_notifytype" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblNotify" Relationship="perscabnewModel.R_116" FromRole="tblNotifyType" ToRole="tblNotify" />
+        </EntityType>
+        <EntityType Name="tblUserRegistrationType">
+          <Key>
+            <PropertyRef Name="id_registration_typeid" />
+          </Key>
+          <Property Name="id_registration_typeid" Type="Guid" Nullable="false" />
+          <Property Name="caption_registration_typeid" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_119" FromRole="tblUserRegistrationType" ToRole="tblUserInfo" />
+        </EntityType>
+        <Association Name="R_116">
+          <End Type="perscabnewModel.tblNotifyType" Role="tblNotifyType" Multiplicity="1" />
+          <End Type="perscabnewModel.tblNotify" Role="tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyType">
+              <PropertyRef Name="id_notifytype" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="id_notifytype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_117">
+          <End Type="perscabnewModel.tblNotifyStatus" Role="tblNotifyStatus" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblNotify" Role="tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyStatus">
+              <PropertyRef Name="id_notifystatus" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="notifystatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_119">
+          <End Type="perscabnewModel.tblUserRegistrationType" Role="tblUserRegistrationType" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserRegistrationType">
+              <PropertyRef Name="id_registration_typeid" />
+            </Principal>
+            <Dependent Role="tblUserInfo">
+              <PropertyRef Name="id_registration_typeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblNotifyChannel">
+          <Key>
+            <PropertyRef Name="id_notifychannel" />
+          </Key>
+          <Property Name="id_notifychannel" Type="Guid" Nullable="false" />
+          <Property Name="caption_notifychannel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblNotify" Relationship="perscabnewModel.R_118" FromRole="tblNotifyChannel" ToRole="tblNotify" />
+        </EntityType>
+        <Association Name="R_118">
+          <End Type="perscabnewModel.tblNotifyChannel" Role="tblNotifyChannel" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblNotify" Role="tblNotify" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblNotifyChannel">
+              <PropertyRef Name="id_notifychannel" />
+            </Principal>
+            <Dependent Role="tblNotify">
+              <PropertyRef Name="id_notifychannel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblPrichinaPodachiZ">
+          <Key>
+            <PropertyRef Name="id_prichinapodachiz" />
+          </Key>
+          <Property Name="id_prichinapodachiz" Type="Guid" Nullable="false" />
+          <Property Name="caption_short" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="caption_long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_120" FromRole="tblPrichinaPodachiZ" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblOrderSource">
+          <Key>
+            <PropertyRef Name="id_ordersource" />
+          </Key>
+          <Property Name="id_ordersource" Type="Guid" Nullable="false" />
+          <Property Name="caption_ordersource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="caption_ordersource_short" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_121" FromRole="tblOrderSource" ToRole="tblZayavka" />
+        </EntityType>
+        <EntityType Name="tblFIASRegionCity">
+          <Key>
+            <PropertyRef Name="id_FIASRegionCity" />
+          </Key>
+          <Property Name="id_FIASRegionCity" Type="Guid" Nullable="false" />
+          <Property Name="caption_FIASRegionCity" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="id_filial" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFilial" Relationship="perscabnewModel.R_122" FromRole="tblFIASRegionCity" ToRole="tblFilial" />
+          <NavigationProperty Name="tblZayavka" Relationship="perscabnewModel.R_123" FromRole="tblFIASRegionCity" ToRole="tblZayavka" />
+        </EntityType>
+        <Association Name="R_122">
+          <End Type="perscabnewModel.tblFilial" Role="tblFilial" Multiplicity="1" />
+          <End Type="perscabnewModel.tblFIASRegionCity" Role="tblFIASRegionCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblFIASRegionCity">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblZayavka">
+          <Key>
+            <PropertyRef Name="id_zayavka" />
+          </Key>
+          <Property Name="id_user" Type="Guid" Nullable="false" />
+          <Property Name="id_zayavka" Type="Guid" Nullable="false" />
+          <Property Name="id_zayavkatype" Type="Int32" Nullable="false" />
+          <Property Name="comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="date_create_zayavka" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="zayavka_number_1c" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="zayavka_date_1c" Type="DateTime" Precision="3" />
+          <Property Name="is_viewed" Type="Boolean" Nullable="false" />
+          <Property Name="viewed_operator" Type="Guid" />
+          <Property Name="id_filial" Type="Int32" />
+          <Property Name="is_temp" Type="Boolean" />
+          <Property Name="id_zayavkastatus" Type="Int32" />
+          <Property Name="id1C_EnumUrovenU" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="id1C_VidZayavki" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="id1C_CenovayaKategoriya" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="id1C_StatusOplaty" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="id1C_VidRassrochki" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="v1C_adresEPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="v1C_maxMoschnostEPU" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="id_gp" Type="Guid" />
+          <Property Name="v1C_StatusZayavki" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="v1C_NomerDogovora" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="v1C_DataDogovora" Type="DateTime" Precision="0" />
+          <Property Name="v1C_StatusDogovora" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="v1C_EPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="v1C_StatusOplaty" Type="Binary" MaxLength="16" FixedLength="true" />
+          <Property Name="status_PrikreplenAktTP" Type="Boolean" />
+          <Property Name="status_PrikreplenAktDopuskaPU" Type="Boolean" />
+          <Property Name="id_prichinapodachiz" Type="Guid" />
+          <Property Name="v1C_Zayavitel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="status_GP_RegNewZ" Type="Boolean" />
+          <Property Name="status_GP_RegNewDTP" Type="Boolean" />
+          <Property Name="status_ZAnnulirovana" Type="Boolean" />
+          <Property Name="is_vremennaya" Type="Boolean" />
+          <Property Name="id_ordersource" Type="Guid" />
+          <Property Name="date_copy_from1c" Type="DateTime" Precision="3" />
+          <Property Name="id_FIASRegionCity" Type="Guid" />
+          <NavigationProperty Name="tblContract" Relationship="perscabnewModel.R_84" FromRole="tblZayavka" ToRole="tblContract" />
+          <NavigationProperty Name="tblFIASRegionCity" Relationship="perscabnewModel.R_123" FromRole="tblZayavka" ToRole="tblFIASRegionCity" />
+          <NavigationProperty Name="tblFilial" Relationship="perscabnewModel.R_83" FromRole="tblZayavka" ToRole="tblFilial" />
+          <NavigationProperty Name="tblGP" Relationship="perscabnewModel.R_115" FromRole="tblZayavka" ToRole="tblGP" />
+          <NavigationProperty Name="tblGP_DogovorEnergo" Relationship="perscabnewModel.R_110" FromRole="tblZayavka" ToRole="tblGP_DogovorEnergo" />
+          <NavigationProperty Name="tblLog" Relationship="perscabnewModel.R_74" FromRole="tblZayavka" ToRole="tblLog" />
+          <NavigationProperty Name="tblOrderSource" Relationship="perscabnewModel.R_121" FromRole="tblZayavka" ToRole="tblOrderSource" />
+          <NavigationProperty Name="tblPrichinaPodachiZ" Relationship="perscabnewModel.R_120" FromRole="tblZayavka" ToRole="tblPrichinaPodachiZ" />
+          <NavigationProperty Name="tblUserInfo" Relationship="perscabnewModel.R_67" FromRole="tblZayavka" ToRole="tblUserInfo" />
+          <NavigationProperty Name="tblZayavkaStatus" Relationship="perscabnewModel.R_106" FromRole="tblZayavka" ToRole="tblZayavkaStatus" />
+          <NavigationProperty Name="tblZayavkaType" Relationship="perscabnewModel.R_68" FromRole="tblZayavka" ToRole="tblZayavkaType" />
+          <NavigationProperty Name="tblZayavkaDoc" Relationship="perscabnewModel.R_71" FromRole="tblZayavka" ToRole="tblZayavkaDoc" />
+          <NavigationProperty Name="tblZayavkaChat" Relationship="perscabnewModel.R_77" FromRole="tblZayavka" ToRole="tblZayavkaChat" />
+        </EntityType>
+        <Association Name="R_84">
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblContract" Role="tblContract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblContract">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_123">
+          <End Type="perscabnewModel.tblFIASRegionCity" Role="tblFIASRegionCity" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFIASRegionCity">
+              <PropertyRef Name="id_FIASRegionCity" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_FIASRegionCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_83">
+          <End Type="perscabnewModel.tblFilial" Role="tblFilial" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFilial">
+              <PropertyRef Name="id_filial" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_filial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_115">
+          <End Type="perscabnewModel.tblGP" Role="tblGP" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGP">
+              <PropertyRef Name="id_gp" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_gp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_110">
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblGP_DogovorEnergo" Role="tblGP_DogovorEnergo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblGP_DogovorEnergo">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_74">
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblLog" Role="tblLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblLog">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_121">
+          <End Type="perscabnewModel.tblOrderSource" Role="tblOrderSource" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrderSource">
+              <PropertyRef Name="id_ordersource" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_ordersource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_120">
+          <End Type="perscabnewModel.tblPrichinaPodachiZ" Role="tblPrichinaPodachiZ" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPrichinaPodachiZ">
+              <PropertyRef Name="id_prichinapodachiz" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_prichinapodachiz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_67">
+          <End Type="perscabnewModel.tblUserInfo" Role="tblUserInfo" Multiplicity="1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserInfo">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_106">
+          <End Type="perscabnewModel.tblZayavkaStatus" Role="tblZayavkaStatus" Multiplicity="0..1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaStatus">
+              <PropertyRef Name="id_zayavkastatus" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_zayavkastatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_68">
+          <End Type="perscabnewModel.tblZayavkaType" Role="tblZayavkaType" Multiplicity="1" />
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavkaType">
+              <PropertyRef Name="id_zayavkatype" />
+            </Principal>
+            <Dependent Role="tblZayavka">
+              <PropertyRef Name="id_zayavkatype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_71">
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="1" />
+          <End Type="perscabnewModel.tblZayavkaDoc" Role="tblZayavkaDoc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblZayavkaDoc">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="R_77">
+          <End Type="perscabnewModel.tblZayavka" Role="tblZayavka" Multiplicity="1" />
+          <End Type="perscabnewModel.tblZayavkaChat" Role="tblZayavkaChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblZayavka">
+              <PropertyRef Name="id_zayavka" />
+            </Principal>
+            <Dependent Role="tblZayavkaChat">
+              <PropertyRef Name="id_zayavka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище perscabnewModelContainer" CdmEntityContainer="perscabnewEntities">
+          <EntitySetMapping Name="tblDocType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblDocType">
+              <MappingFragment StoreEntitySet="tblDocType">
+                <ScalarProperty Name="id_doctype" ColumnName="id_doctype" />
+                <ScalarProperty Name="caption_doctype" ColumnName="caption_doctype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserInfo">
+            <EntityTypeMapping TypeName="perscabnewModel.tblUserInfo">
+              <MappingFragment StoreEntitySet="tblUserInfo">
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="id_registration_typeid" ColumnName="id_registration_typeid" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="user_nameingrid" ColumnName="user_nameingrid" />
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="date_create_user" ColumnName="date_create_user" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="fl_familiya" ColumnName="fl_familiya" />
+                <ScalarProperty Name="fl_name" ColumnName="fl_name" />
+                <ScalarProperty Name="fl_otchestvo" ColumnName="fl_otchestvo" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="yl_fullname" ColumnName="yl_fullname" />
+                <ScalarProperty Name="yl_shortname" ColumnName="yl_shortname" />
+                <ScalarProperty Name="inn" ColumnName="inn" />
+                <ScalarProperty Name="contact_familiya" ColumnName="contact_familiya" />
+                <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+                <ScalarProperty Name="contact_otchestvo" ColumnName="contact_otchestvo" />
+                <ScalarProperty Name="confirm_code" ColumnName="confirm_code" />
+                <ScalarProperty Name="confirm_code_date_send" ColumnName="confirm_code_date_send" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="id_usertype" ColumnName="id_usertype" />
+                <ScalarProperty Name="id_userrole" ColumnName="id_userrole" />
+                <ScalarProperty Name="password_text" ColumnName="password_text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserRole">
+            <EntityTypeMapping TypeName="perscabnewModel.tblUserRole">
+              <MappingFragment StoreEntitySet="tblUserRole">
+                <ScalarProperty Name="id_userrole" ColumnName="id_userrole" />
+                <ScalarProperty Name="caption_userrole" ColumnName="caption_userrole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblUserType">
+              <MappingFragment StoreEntitySet="tblUserType">
+                <ScalarProperty Name="id_usertype" ColumnName="id_usertype" />
+                <ScalarProperty Name="caption_usertype" ColumnName="caption_usertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZayavkaChat">
+            <EntityTypeMapping TypeName="perscabnewModel.tblZayavkaChat">
+              <MappingFragment StoreEntitySet="tblZayavkaChat">
+                <ScalarProperty Name="isread_datetime" ColumnName="isread_datetime" />
+                <ScalarProperty Name="isread_user" ColumnName="isread_user" />
+                <ScalarProperty Name="isread" ColumnName="isread" />
+                <ScalarProperty Name="istemp" ColumnName="istemp" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+                <ScalarProperty Name="id_chatrec" ColumnName="id_chatrec" />
+                <ScalarProperty Name="caption_msg" ColumnName="caption_msg" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="chatrec_datetime" ColumnName="chatrec_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZayavkaDoc">
+            <EntityTypeMapping TypeName="perscabnewModel.tblZayavkaDoc">
+              <MappingFragment StoreEntitySet="tblZayavkaDoc">
+                <ScalarProperty Name="esign_kontr" ColumnName="esign_kontr" />
+                <ScalarProperty Name="esign_oke" ColumnName="esign_oke" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="id_contract" ColumnName="id_contract" />
+                <ScalarProperty Name="is_temp" ColumnName="is_temp" />
+                <ScalarProperty Name="id_chatrec" ColumnName="id_chatrec" />
+                <ScalarProperty Name="doc_file_path" ColumnName="doc_file_path" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+                <ScalarProperty Name="id_doctype" ColumnName="id_doctype" />
+                <ScalarProperty Name="id_zayavkadoc" ColumnName="id_zayavkadoc" />
+                <ScalarProperty Name="date_doc_add" ColumnName="date_doc_add" />
+                <ScalarProperty Name="doc_file_name" ColumnName="doc_file_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZayavkaType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblZayavkaType">
+              <MappingFragment StoreEntitySet="tblZayavkaType">
+                <ScalarProperty Name="caption_zayavkatype_short" ColumnName="caption_zayavkatype_short" />
+                <ScalarProperty Name="id_zayavkatype" ColumnName="id_zayavkatype" />
+                <ScalarProperty Name="caption_zayavkatype" ColumnName="caption_zayavkatype" />
+                <ScalarProperty Name="id_usertype" ColumnName="id_usertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLog">
+            <EntityTypeMapping TypeName="perscabnewModel.tblLog">
+              <MappingFragment StoreEntitySet="tblLog">
+                <ScalarProperty Name="id_logeventtype" ColumnName="id_logeventtype" />
+                <ScalarProperty Name="logrec_datetime" ColumnName="logrec_datetime" />
+                <ScalarProperty Name="id_logrec" ColumnName="id_logrec" />
+                <ScalarProperty Name="comment_log" ColumnName="comment_log" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContract">
+            <EntityTypeMapping TypeName="perscabnewModel.tblContract">
+              <MappingFragment StoreEntitySet="tblContract">
+                <ScalarProperty Name="id_contractstatus" ColumnName="id_contractstatus" />
+                <ScalarProperty Name="contract_date_1c" ColumnName="contract_date_1c" />
+                <ScalarProperty Name="contract_number_1c" ColumnName="contract_number_1c" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+                <ScalarProperty Name="id_contract" ColumnName="id_contract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContractDoc">
+            <EntityTypeMapping TypeName="perscabnewModel.tblContractDoc">
+              <MappingFragment StoreEntitySet="tblContractDoc">
+                <ScalarProperty Name="id_doctype" ColumnName="id_doctype" />
+                <ScalarProperty Name="doc_file_path" ColumnName="doc_file_path" />
+                <ScalarProperty Name="doc_file_name" ColumnName="doc_file_name" />
+                <ScalarProperty Name="date_doc_add" ColumnName="date_doc_add" />
+                <ScalarProperty Name="id_contract" ColumnName="id_contract" />
+                <ScalarProperty Name="id_contractdoc" ColumnName="id_contractdoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContractStatus">
+            <EntityTypeMapping TypeName="perscabnewModel.tblContractStatus">
+              <MappingFragment StoreEntitySet="tblContractStatus">
+                <ScalarProperty Name="id_contractstatus_1c" ColumnName="id_contractstatus_1c" />
+                <ScalarProperty Name="caption_contractstatus" ColumnName="caption_contractstatus" />
+                <ScalarProperty Name="id_contractstatus" ColumnName="id_contractstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFilial">
+            <EntityTypeMapping TypeName="perscabnewModel.tblFilial">
+              <MappingFragment StoreEntitySet="tblFilial">
+                <ScalarProperty Name="caption_filial_short" ColumnName="caption_filial_short" />
+                <ScalarProperty Name="caption_filial" ColumnName="caption_filial" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZayavkaStatus">
+            <EntityTypeMapping TypeName="perscabnewModel.tblZayavkaStatus">
+              <MappingFragment StoreEntitySet="tblZayavkaStatus">
+                <ScalarProperty Name="id_zayavkastatus_1c" ColumnName="id_zayavkastatus_1c" />
+                <ScalarProperty Name="caption_zayavkastatus" ColumnName="caption_zayavkastatus" />
+                <ScalarProperty Name="id_zayavkastatus" ColumnName="id_zayavkastatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblESignDoc">
+            <EntityTypeMapping TypeName="perscabnewModel.tblESignDoc">
+              <MappingFragment StoreEntitySet="tblESignDoc">
+                <ScalarProperty Name="esign_date" ColumnName="esign_date" />
+                <ScalarProperty Name="esign_user" ColumnName="esign_user" />
+                <ScalarProperty Name="esign_docid" ColumnName="esign_docid" />
+                <ScalarProperty Name="verify_datetime" ColumnName="verify_datetime" />
+                <ScalarProperty Name="verify_user" ColumnName="verify_user" />
+                <ScalarProperty Name="verify_status" ColumnName="verify_status" />
+                <ScalarProperty Name="id_zayavkadoc" ColumnName="id_zayavkadoc" />
+                <ScalarProperty Name="id_esign" ColumnName="id_esign" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGP">
+            <EntityTypeMapping TypeName="perscabnewModel.tblGP">
+              <MappingFragment StoreEntitySet="tblGP">
+                <ScalarProperty Name="caption_GP" ColumnName="caption_GP" />
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGP_Filial">
+            <EntityTypeMapping TypeName="perscabnewModel.tblGP_Filial">
+              <MappingFragment StoreEntitySet="tblGP_Filial">
+                <ScalarProperty Name="caption_GP_filial" ColumnName="caption_GP_filial" />
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
+                <ScalarProperty Name="id_gp_filial" ColumnName="id_gp_filial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGP_Predstavitel">
+            <EntityTypeMapping TypeName="perscabnewModel.tblGP_Predstavitel">
+              <MappingFragment StoreEntitySet="tblGP_Predstavitel">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
+                <ScalarProperty Name="id_gp_filial" ColumnName="id_gp_filial" />
+                <ScalarProperty Name="name_predstavitel" ColumnName="name_predstavitel" />
+                <ScalarProperty Name="id_gp_predstavitel" ColumnName="id_gp_predstavitel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGP_PrichinaDE">
+            <EntityTypeMapping TypeName="perscabnewModel.tblGP_PrichinaDE">
+              <MappingFragment StoreEntitySet="tblGP_PrichinaDE">
+                <ScalarProperty Name="caption_prichinade" ColumnName="caption_prichinade" />
+                <ScalarProperty Name="id_prichinade" ColumnName="id_prichinade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl1C_CenovayaKategoriya">
+            <EntityTypeMapping TypeName="perscabnewModel.tbl1C_CenovayaKategoriya">
+              <MappingFragment StoreEntitySet="tbl1C_CenovayaKategoriya">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="C_EnumOrder" ColumnName="_EnumOrder" />
+                <ScalarProperty Name="C_IDRref" ColumnName="_IDRref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl1C_EnumUrovenU">
+            <EntityTypeMapping TypeName="perscabnewModel.tbl1C_EnumUrovenU">
+              <MappingFragment StoreEntitySet="tbl1C_EnumUrovenU">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="C_EnumOrder" ColumnName="_EnumOrder" />
+                <ScalarProperty Name="C_IDRref" ColumnName="_IDRref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl1C_StatusOplaty">
+            <EntityTypeMapping TypeName="perscabnewModel.tbl1C_StatusOplaty">
+              <MappingFragment StoreEntitySet="tbl1C_StatusOplaty">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="C_EnumOrder" ColumnName="_EnumOrder" />
+                <ScalarProperty Name="C_IDRref" ColumnName="_IDRref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl1C_VidRassrochki">
+            <EntityTypeMapping TypeName="perscabnewModel.tbl1C_VidRassrochki">
+              <MappingFragment StoreEntitySet="tbl1C_VidRassrochki">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="C_EnumOrder" ColumnName="_EnumOrder" />
+                <ScalarProperty Name="C_IDRref" ColumnName="_IDRref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl1C_VidZayavki">
+            <EntityTypeMapping TypeName="perscabnewModel.tbl1C_VidZayavki">
+              <MappingFragment StoreEntitySet="tbl1C_VidZayavki">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="C_EnumOrder" ColumnName="_EnumOrder" />
+                <ScalarProperty Name="C_IDRref" ColumnName="_IDRref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGP_DogovorEnergo">
+            <EntityTypeMapping TypeName="perscabnewModel.tblGP_DogovorEnergo">
+              <MappingFragment StoreEntitySet="tblGP_DogovorEnergo">
+                <ScalarProperty Name="id_cenovayakategoriya" ColumnName="id_cenovayakategoriya" />
+                <ScalarProperty Name="date_podpis_de" ColumnName="date_podpis_de" />
+                <ScalarProperty Name="date_create_de" ColumnName="date_create_de" />
+                <ScalarProperty Name="nomer_elektroustanovka" ColumnName="nomer_elektroustanovka" />
+                <ScalarProperty Name="nomer_dogovorenergo" ColumnName="nomer_dogovorenergo" />
+                <ScalarProperty Name="nomer_ls" ColumnName="nomer_ls" />
+                <ScalarProperty Name="id_prichinade" ColumnName="id_prichinade" />
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
+                <ScalarProperty Name="id_gp_filial" ColumnName="id_gp_filial" />
+                <ScalarProperty Name="id_gp_predstavitel" ColumnName="id_gp_predstavitel" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+                <ScalarProperty Name="id_dogovorenergo" ColumnName="id_dogovorenergo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogEventType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblLogEventType">
+              <MappingFragment StoreEntitySet="tblLogEventType">
+                <ScalarProperty Name="caption_logeventtype" ColumnName="caption_logeventtype" />
+                <ScalarProperty Name="id_logeventtype" ColumnName="id_logeventtype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotify">
+            <EntityTypeMapping TypeName="perscabnewModel.tblNotify">
+              <MappingFragment StoreEntitySet="tblNotify">
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="link_id" ColumnName="link_id" />
+                <ScalarProperty Name="date_plan_notify" ColumnName="date_plan_notify" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id_notifychannel" ColumnName="id_notifychannel" />
+                <ScalarProperty Name="date_send_notify" ColumnName="date_send_notify" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="notify_text" ColumnName="notify_text" />
+                <ScalarProperty Name="notifystatus_id" ColumnName="notifystatus_id" />
+                <ScalarProperty Name="recipient_id" ColumnName="recipient_id" />
+                <ScalarProperty Name="date_create_notify" ColumnName="date_create_notify" />
+                <ScalarProperty Name="id_notifytype" ColumnName="id_notifytype" />
+                <ScalarProperty Name="id_notify" ColumnName="id_notify" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotifyStatus">
+            <EntityTypeMapping TypeName="perscabnewModel.tblNotifyStatus">
+              <MappingFragment StoreEntitySet="tblNotifyStatus">
+                <ScalarProperty Name="caption_notifystatus" ColumnName="caption_notifystatus" />
+                <ScalarProperty Name="id_notifystatus" ColumnName="id_notifystatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotifyType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblNotifyType">
+              <MappingFragment StoreEntitySet="tblNotifyType">
+                <ScalarProperty Name="caption_notifytype" ColumnName="caption_notifytype" />
+                <ScalarProperty Name="id_notifytype" ColumnName="id_notifytype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserRegistrationType">
+            <EntityTypeMapping TypeName="perscabnewModel.tblUserRegistrationType">
+              <MappingFragment StoreEntitySet="tblUserRegistrationType">
+                <ScalarProperty Name="caption_registration_typeid" ColumnName="caption_registration_typeid" />
+                <ScalarProperty Name="id_registration_typeid" ColumnName="id_registration_typeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblNotifyChannel">
+            <EntityTypeMapping TypeName="perscabnewModel.tblNotifyChannel">
+              <MappingFragment StoreEntitySet="tblNotifyChannel">
+                <ScalarProperty Name="caption_notifychannel" ColumnName="caption_notifychannel" />
+                <ScalarProperty Name="id_notifychannel" ColumnName="id_notifychannel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPrichinaPodachiZ">
+            <EntityTypeMapping TypeName="perscabnewModel.tblPrichinaPodachiZ">
+              <MappingFragment StoreEntitySet="tblPrichinaPodachiZ">
+                <ScalarProperty Name="caption_long" ColumnName="caption_long" />
+                <ScalarProperty Name="caption_short" ColumnName="caption_short" />
+                <ScalarProperty Name="id_prichinapodachiz" ColumnName="id_prichinapodachiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderSource">
+            <EntityTypeMapping TypeName="perscabnewModel.tblOrderSource">
+              <MappingFragment StoreEntitySet="tblOrderSource">
+                <ScalarProperty Name="caption_ordersource_short" ColumnName="caption_ordersource_short" />
+                <ScalarProperty Name="caption_ordersource" ColumnName="caption_ordersource" />
+                <ScalarProperty Name="id_ordersource" ColumnName="id_ordersource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFIASRegionCity">
+            <EntityTypeMapping TypeName="perscabnewModel.tblFIASRegionCity">
+              <MappingFragment StoreEntitySet="tblFIASRegionCity">
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="caption_FIASRegionCity" ColumnName="caption_FIASRegionCity" />
+                <ScalarProperty Name="id_FIASRegionCity" ColumnName="id_FIASRegionCity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblZayavka">
+            <EntityTypeMapping TypeName="perscabnewModel.tblZayavka">
+              <MappingFragment StoreEntitySet="tblZayavka">
+                <ScalarProperty Name="id_FIASRegionCity" ColumnName="id_FIASRegionCity" />
+                <ScalarProperty Name="date_copy_from1c" ColumnName="date_copy_from1c" />
+                <ScalarProperty Name="id_ordersource" ColumnName="id_ordersource" />
+                <ScalarProperty Name="is_vremennaya" ColumnName="is_vremennaya" />
+                <ScalarProperty Name="status_ZAnnulirovana" ColumnName="status_ZAnnulirovana" />
+                <ScalarProperty Name="status_GP_RegNewDTP" ColumnName="status_GP_RegNewDTP" />
+                <ScalarProperty Name="status_GP_RegNewZ" ColumnName="status_GP_RegNewZ" />
+                <ScalarProperty Name="v1C_Zayavitel" ColumnName="v1C_Zayavitel" />
+                <ScalarProperty Name="id_prichinapodachiz" ColumnName="id_prichinapodachiz" />
+                <ScalarProperty Name="status_PrikreplenAktDopuskaPU" ColumnName="status_PrikreplenAktDopuskaPU" />
+                <ScalarProperty Name="status_PrikreplenAktTP" ColumnName="status_PrikreplenAktTP" />
+                <ScalarProperty Name="v1C_StatusOplaty" ColumnName="v1C_StatusOplaty" />
+                <ScalarProperty Name="v1C_EPU" ColumnName="v1C_EPU" />
+                <ScalarProperty Name="v1C_StatusDogovora" ColumnName="v1C_StatusDogovora" />
+                <ScalarProperty Name="v1C_DataDogovora" ColumnName="v1C_DataDogovora" />
+                <ScalarProperty Name="v1C_NomerDogovora" ColumnName="v1C_NomerDogovora" />
+                <ScalarProperty Name="v1C_StatusZayavki" ColumnName="v1C_StatusZayavki" />
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
+                <ScalarProperty Name="v1C_maxMoschnostEPU" ColumnName="v1C_maxMoschnostEPU" />
+                <ScalarProperty Name="v1C_adresEPU" ColumnName="v1C_adresEPU" />
+                <ScalarProperty Name="id1C_VidRassrochki" ColumnName="id1C_VidRassrochki" />
+                <ScalarProperty Name="id1C_StatusOplaty" ColumnName="id1C_StatusOplaty" />
+                <ScalarProperty Name="id1C_CenovayaKategoriya" ColumnName="id1C_CenovayaKategoriya" />
+                <ScalarProperty Name="id1C_VidZayavki" ColumnName="id1C_VidZayavki" />
+                <ScalarProperty Name="id1C_EnumUrovenU" ColumnName="id1C_EnumUrovenU" />
+                <ScalarProperty Name="id_zayavkastatus" ColumnName="id_zayavkastatus" />
+                <ScalarProperty Name="is_temp" ColumnName="is_temp" />
+                <ScalarProperty Name="id_filial" ColumnName="id_filial" />
+                <ScalarProperty Name="viewed_operator" ColumnName="viewed_operator" />
+                <ScalarProperty Name="is_viewed" ColumnName="is_viewed" />
+                <ScalarProperty Name="zayavka_date_1c" ColumnName="zayavka_date_1c" />
+                <ScalarProperty Name="zayavka_number_1c" ColumnName="zayavka_number_1c" />
+                <ScalarProperty Name="date_create_zayavka" ColumnName="date_create_zayavka" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="id_zayavkatype" ColumnName="id_zayavkatype" />
+                <ScalarProperty Name="id_zayavka" ColumnName="id_zayavka" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

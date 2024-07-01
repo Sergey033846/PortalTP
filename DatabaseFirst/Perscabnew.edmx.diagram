@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9edb2a1623304c469e9a1b80567496a1" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="perscabnewModel.tblDocType" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblUserInfo" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblUserRole" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblUserType" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblZayavkaChat" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblZayavkaDoc" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="perscabnewModel.tblZayavkaType" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="perscabnewModel.R_73" ManuallyRouted="false" />
+        <AssociationConnector Association="perscabnewModel.R_66" ManuallyRouted="false" />
+        <AssociationConnector Association="perscabnewModel.R_78" ManuallyRouted="false" />
+        <AssociationConnector Association="perscabnewModel.R_80" ManuallyRouted="false" />
+        <AssociationConnector Association="perscabnewModel.R_81" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="perscabnewModel.tblLog" Width="1.5" PointX="10.5" PointY="6.125" />
+        <AssociationConnector Association="perscabnewModel.R_75" />
+        <EntityTypeShape EntityType="perscabnewModel.tblContract" Width="1.5" PointX="7.5" PointY="15.25" />
+        <EntityTypeShape EntityType="perscabnewModel.tblContractDoc" Width="1.5" PointX="10.25" PointY="15.25" />
+        <EntityTypeShape EntityType="perscabnewModel.tblContractStatus" Width="1.5" PointX="7.5" PointY="2.625" />
+        <EntityTypeShape EntityType="perscabnewModel.tblFilial" Width="1.5" PointX="3" PointY="16.625" />
+        <EntityTypeShape EntityType="perscabnewModel.tblZayavkaStatus" Width="1.5" PointX="5.25" PointY="6" />
+        <AssociationConnector Association="perscabnewModel.R_91" />
+        <AssociationConnector Association="perscabnewModel.R_92" />
+        <AssociationConnector Association="perscabnewModel.R_96" />
+        <AssociationConnector Association="perscabnewModel.R_98" />
+        <EntityTypeShape EntityType="perscabnewModel.tblESignDoc" Width="1.5" PointX="12.75" PointY="9.25" />
+        <AssociationConnector Association="perscabnewModel.R_101" />
+        <AssociationConnector Association="perscabnewModel.R_103" />
+        <EntityTypeShape EntityType="perscabnewModel.tblGP" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tblGP_Filial" Width="1.5" PointX="8" PointY="0.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tblGP_Predstavitel" Width="1.5" PointX="10.25" PointY="3.5" />
+        <EntityTypeShape EntityType="perscabnewModel.tblGP_PrichinaDE" Width="1.5" PointX="11.25" PointY="0.875" />
+        <AssociationConnector Association="perscabnewModel.R_107" />
+        <AssociationConnector Association="perscabnewModel.R_108" />
+        <AssociationConnector Association="perscabnewModel.R_109" />
+        <AssociationConnector Association="perscabnewModel.R_114" />
+        <AssociationConnector Association="perscabnewModel.R_105" />
+        <EntityTypeShape EntityType="perscabnewModel.tbl1C_CenovayaKategoriya" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tbl1C_EnumUrovenU" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tbl1C_StatusOplaty" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tbl1C_VidRassrochki" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tbl1C_VidZayavki" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tblGP_DogovorEnergo" Width="1.5" PointX="13.875" PointY="4.875" />
+        <EntityTypeShape EntityType="perscabnewModel.tblLogEventType" Width="1.5" PointX="8.625" PointY="18.625" />
+        <AssociationConnector Association="perscabnewModel.R_111" />
+        <AssociationConnector Association="perscabnewModel.R_113" />
+        <AssociationConnector Association="perscabnewModel.R_82" />
+        <EntityTypeShape EntityType="perscabnewModel.tblNotify" Width="1.5" PointX="17.625" PointY="10" />
+        <EntityTypeShape EntityType="perscabnewModel.tblNotifyStatus" Width="1.5" PointX="15.375" PointY="10.875" />
+        <EntityTypeShape EntityType="perscabnewModel.tblNotifyType" Width="1.5" PointX="15.375" PointY="13.875" />
+        <EntityTypeShape EntityType="perscabnewModel.tblUserRegistrationType" Width="1.5" PointX="13.375" PointY="0.875" />
+        <AssociationConnector Association="perscabnewModel.R_116" />
+        <AssociationConnector Association="perscabnewModel.R_117" />
+        <AssociationConnector Association="perscabnewModel.R_119" />
+        <EntityTypeShape EntityType="perscabnewModel.tblNotifyChannel" Width="1.5" PointX="15.375" PointY="16.125" />
+        <AssociationConnector Association="perscabnewModel.R_118" />
+        <EntityTypeShape EntityType="perscabnewModel.tblPrichinaPodachiZ" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="perscabnewModel.tblOrderSource" Width="1.5" PointX="12.375" PointY="15.875" />
+        <EntityTypeShape EntityType="perscabnewModel.tblFIASRegionCity" Width="1.5" PointX="5.25" PointY="17.75" />
+        <AssociationConnector Association="perscabnewModel.R_122" />
+        <EntityTypeShape EntityType="perscabnewModel.tblZayavka" Width="1.5" PointX="20.625" PointY="5.5" />
+        <AssociationConnector Association="perscabnewModel.R_84" />
+        <AssociationConnector Association="perscabnewModel.R_123" />
+        <AssociationConnector Association="perscabnewModel.R_83" />
+        <AssociationConnector Association="perscabnewModel.R_115" />
+        <AssociationConnector Association="perscabnewModel.R_110" />
+        <AssociationConnector Association="perscabnewModel.R_74" />
+        <AssociationConnector Association="perscabnewModel.R_121" />
+        <AssociationConnector Association="perscabnewModel.R_120" />
+        <AssociationConnector Association="perscabnewModel.R_67" />
+        <AssociationConnector Association="perscabnewModel.R_106" />
+        <AssociationConnector Association="perscabnewModel.R_68" />
+        <AssociationConnector Association="perscabnewModel.R_71" />
+        <AssociationConnector Association="perscabnewModel.R_77" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

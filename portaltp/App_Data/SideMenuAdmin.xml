@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <group Text="Администрирование">
+    <item Text="Журнал работы" NavigateUrl="~/Account/Admin/ViewLog.aspx" />
+    <item Text="Пользователи" NavigateUrl="~/Account/Admin/AdminUsers.aspx" />
+  </group>
+</menu>

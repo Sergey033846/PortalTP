@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="Формы и образцы документов" NavigateUrl="DocForms" />
+  <item Text="Нормативные документы" NavigateUrl="http://xn--38-9kcij3agjakafdg2a8b2l.xn--p1ai/about/statistics/tp/normativno-pravovye-akty-po-tekhnologicheskomu-prisoedineniyu.php" Target="_blank"/>
+  <item Text="Памятка для заявителей" NavigateUrl="http://xn--38-9kcij3agjakafdg2a8b2l.xn--p1ai/uslugi/tp/pamyatka.php" Target="_blank"/>
+  <item Text="Контакты" NavigateUrl="http://xn--38-9kcij3agjakafdg2a8b2l.xn--p1ai/about/contacts/" Target="_blank"/>
+</items>

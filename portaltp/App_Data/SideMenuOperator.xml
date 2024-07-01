@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <group Text="Управление заявками">
+    <item Text="Все заявки" NavigateUrl="~/Account/Admin/ViewOrders.aspx" />
+    <item Text="Электронная переписка" NavigateUrl="~/Account/Admin/Chat.aspx" />
+  </group>
+  <group Text="Инструкции">
+    <item Text="Руководство оператора" NavigateUrl="~/Account/Admin/docs/Личный кабинет ТП_Руководство оператора.docx" />
+  </group>
+</menu>

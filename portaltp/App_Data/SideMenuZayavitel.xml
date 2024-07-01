@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <group Text="Заявки на ТП">
+    <item Text="Мои заявки" NavigateUrl="~/Account/MyOrders.aspx" />
+    <item Text="Подать заявку" NavigateUrl="~/Account/SendOrder.aspx" />
+  </group>
+  <group Text="Договоры">    
+    <item Text="Мои договоры" NavigateUrl="~/Account/MyContracts.aspx" />
+  </group>
+  <group Text="Работа с ЭЦП">    
+    <item Text="Проверить ЭЦП" NavigateUrl="https://53.gosuslugi.ru/pgu/eds" Target="_blank"/>
+  </group>
+</menu>

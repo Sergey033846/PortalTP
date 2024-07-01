@@ -1,0 +1,276 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    /*padding-top: 50px;*/
+	padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+.bodylogo {
+    /*padding-top: 190px;*/
+	padding-top: 0px;
+    padding-bottom: 20px;	
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+/*input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}*/
+
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    max-width: 280px;
+}
+
+.inputlogin {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        /*margin-top: 20px;*/
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+
+/* ------------------- Переопределяем стили bootstrap -------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #337ab7;
+}
+
+h2,
+.h2 {
+  font-size: 27px;
+}
+
+.navbar {   
+  margin-bottom: 10px;  
+}
+
+.navbar-fixed-top {  
+  position: relative;  /* убираем фиксацию */
+}
+
+.navbar-fixed-top-logo {
+  /*top: 0;
+  border-width: 0 0 1px;*/
+  position: relative;
+  height: 180px;
+}
+
+.navbar-inverse {
+  background-color: #ffffff /*#222*/;
+  border-color: #9d9d9d;/*#080808;*/
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #337ab7; /*#9d9d9d;*/
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #23527c; /*#fff;*/
+  background-color: #eeeeee; /*transparent;*/
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.navbar-brand-logo{  
+  padding: 5px 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron,
+  .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 30px;
+	color: #337ab7;
+  }
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #fff;
+}
+
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.mcbuttoningrid {
+	color: #337ab7;
+}
+
+.mcbuttoningrid-red {
+	color: red;
+}
+
+.mcbuttoningrid-green{
+	color: green;
+}
+
+.mc-tabbadge-red {
+	background-color: red;
+}
+
+.mc-tabbadge-green {
+	background-color: green;
+}
+
+/*
+
+body{
+  background-color: #f1f1f1;
+}
+.main-timeline-section{
+  position: relative; 
+  width: 100%;  
+  margin:auto; 
+  height:300px;
+}
+.main-timeline-section .timeline-start,
+.main-timeline-section .timeline-end{
+  position: absolute;
+  background:#F2635F;
+  border-radius:100px;
+  top:50%;
+  transform: translateY(-50%);
+  width:30px;
+  height:30px;
+}
+.main-timeline-section .timeline-end{
+  right:0px;
+}
+.main-timeline-section .conference-center-line{
+  position: absolute;
+  width:100%;
+  height:5px;
+  top:50%;
+  transform: translateY(-50%);
+  background:#F2635F;
+}
+.timeline-article{
+    width: 20%;
+    position: relative;
+    min-height: 300px;
+    float:right;
+}
+.timeline-article .content-date{
+    position: absolute;
+    top: 35%;
+    left: -30px; 
+    font-size:18px;
+}
+.timeline-article .meta-date{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%); 
+    width:20px;
+    height:20px;
+    border-radius: 100%;
+    background:#fff;
+    border:1px solid #F2635F;
+}
+.timeline-article .content-box{
+  box-shadow: 2px 2px 4px 0px #c1c1c1;
+  border:1px solid #F2635F;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 180px;
+  position: absolute;
+  top: 60%;
+  left: -80px; 
+  padding:10px;
+}
+.timeline-article-top .content-box:before{
+  content: " ";
+  position:absolute; 
+  left:50%;
+  transform: translateX(-50%);
+  top:-20px;
+  border:10px solid transparent;
+  border-bottom-color: #F2635F;
+}
+.timeline-article-bottom .content-date{
+  top: 59%;
+}
+.timeline-article-bottom .content-box{
+  top: 0%;
+}
+.timeline-article-bottom .content-box:before{
+  content: " ";
+  position:absolute; 
+  left:50%;
+  transform: translateX(-50%);
+  bottom:-20px;
+  border:10px solid transparent;
+  border-top-color:#F2635F;
+}*/
+
+/*
+@media (max-width:460px){
+  body{
+    display: none;
+  }
+}*/
+/*----------*/

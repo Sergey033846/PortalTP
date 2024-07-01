@@ -1,0 +1,167 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="portaltp.SiteMaster" %>
+
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    void HeadLoginStatus_LoggedOut(Object sender, System.EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        //Roles.DeleteCookie();
+        Session.Clear();
+    }
+    /*
+    void LoginStatus1_LoggingOut(Object sender, System.Web.UI.WebControls.LoginCancelEventArgs e)
+    {        
+        Session.Clear();
+        //e.Cancel = true;
+    }*/
+
+</script>
+
+<html lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+    <title>Личный кабинет по ТП</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+        
+    <%--<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
+
+</head>
+<body class="bodylogo">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%--<div class="navbar navbar-inverse navbar-fixed-top navbar-fixed-top-logo">--%>
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-fixed-top-logo">
+            <div class="container">
+                <div class="navbar-header">
+                    <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>--%>
+                                        
+                    <a href="~/" runat="server" class="hidden-xs navbar-brand" title="ОГУЭП «Облкоммунэнерго» (г. Иркутск)">
+                        <dx:BootstrapImage ID="BootstrapImageLogo" runat="server" ImageUrl="~/Content/Images/logo_oguep_main.png" CssClasses-Control="pull left" AlternateText="ОГУЭП «Облкоммунэнерго» (г. Иркутск)"></dx:BootstrapImage>
+                    </a>                   
+                                        
+                    <%--<a href="~/" runat="server" class="navbar-brand">Личный кабинет по ТП</a>--%>
+
+                    <div class="navbar-brand">
+                    <span runat="server">Личный кабинет по технологическому присоединению</span>
+                    
+                        <br /><br />
+                    
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>                            
+                            <a runat="server" href="~/Account/Register" class="btn btn-primary btn-sm">Регистрация</a></li>
+                            <a runat="server" href="~/Account/Login" class="btn btn-primary btn-sm">Войти в личный кабинет</a>
+                            <%--<ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
+                                <li><a runat="server" href="~/Account/Login">Вход</a></li>
+                            </ul>--%>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">                                
+                                <li><a runat="server" href="~/">Добро пожаловать, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Выход" LogoutPageUrl="~/" OnLoggingOut="HeadLoginStatus_LoggedOut" ID="HeadLoginStatus" />
+                                </li>
+                            </ul>                            
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    </div>
+
+                </div>
+                <%--<div class="navbar-collapse collapse">                    
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>                            
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Регистрация</a></li>
+                                <li><a runat="server" href="~/Account/Login">Вход</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">                                
+                                <li><a runat="server" href="~/">Добро пожаловать, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Выход" LogoutPageUrl="~/" OnLoggingOut="HeadLoginStatus_LoggedOut" ID="HeadLoginStatus" />
+                                </li>
+                            </ul>                            
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>--%>
+            </div>
+        </div>
+        
+        <dx:BootstrapMenu ID="BootstrapMenuMain" runat="server" DataSourceID="XmlDataSourceHeader" CssClasses-Control="container"></dx:BootstrapMenu>
+        <br />
+        <div class="container">            
+            <%-- кнопки заявителя Z --%>             
+            <a runat="server" href="~/Cabinet/MyOrders" class="btn btn-success btn-sm" id="ButtonZMyOrders" visible="False">Мои заявки</a>
+            <a runat="server" href="~/Cabinet/SendOrder" class="btn btn-success btn-sm" id="ButtonZSendOrder" visible="False">Подать заявку</a>
+            
+            <%-- кнопки оператора O --%>                        
+            <a runat="server" href="~/Cabinet/ViewOrders" class="btn btn-success btn-sm" id="ButtonOAllOrders" visible="False">Все заявки</a>
+            <a runat="server" href="~/Cabinet/Chat" class="btn btn-success btn-sm" id="ButtonOAllChat" visible="False">Электронная переписка</a>
+            
+            <%-- кнопки гарантирующего поставщика ГП --%>                        
+            <a runat="server" href="~/Cabinet/ViewEnergyDogovors" class="btn btn-success btn-sm" id="ButtonGPAllDogovorsEnergo" visible="False">Договоры энергоснабжения</a>            
+
+            <%-- кнопки администратора A --%>            
+            <div class="pull-right">
+                <a runat="server" href="~/Cabinet/SendOrder" class="btn btn-warning btn-sm" id="ButtonOShowZayavkaForm" visible="False">Форма подачи заявки</a>                            
+                <a runat="server" href="~/Help/Contents" class="btn btn-warning btn-sm" id="ButtonOShowHelpContents" visible="False">Справка</a>
+                <a runat="server" href="~/Cabinet/ViewLog" class="btn btn-danger btn-sm" id="ButtonALog" visible="False">Журнал событий</a>            
+                <a runat="server" href="~/Cabinet/AdminUsers" class="btn btn-danger btn-sm" id="ButtonAAllUsers" visible="False">Пользователи</a>            
+             </div>
+        </div>
+        <hr />
+                
+        <div class="container body-content">
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <hr />
+            
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> ОГУЭП «Облкоммунэнерго»</p>
+            </footer>
+        </div>
+
+        <%-- источники данных для меню --%>
+        <asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/TopMenu.xml" XPath="/items/*"></asp:XmlDataSource>        
+
+    </form>
+</body>
+</html>
